@@ -2,5 +2,13 @@
 <resources>
 
     <string name="app_name">نوشتنک</string>
+    <string name="best">محبوب</string>
+    <string name="my_wall">دیوار من</string>
+    <string name="favorite">علایق</string>
+    <string name="others">بقیه</string>
+    <string name="sent">ارسال شد</string>
+    <string name="liked">لایک شد</string>
+    <string name="liked_before">قبلا اینو لایک کردی;)</string>
+    <string name="internet_error">مشکلی پیش آمد، اینترنت داری؟</string>
 
 </resources>

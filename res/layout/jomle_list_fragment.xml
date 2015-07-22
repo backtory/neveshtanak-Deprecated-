@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#eee"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipe_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center" >
+        </ListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+    
+    <com.meyar.instaboard.styledview.StyledTextView 
+        android:id="@+id/no_jomle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="فعلا جمله ای نیست"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:visibility="gone"/>
+
+    <com.meyar.instaboard.styledview.StyledTextView
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="در حال بارگذاری..."
+        android:textColor="@android:color/black"
+        android:textSize="25sp" />
+
+    <com.meyar.instaboard.styledview.StyledTextView
+        android:id="@+id/loading_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="مشکلی پیش آمد، اینترنت داری؟"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:visibility="gone" />
+
+    <com.meyar.instaboard.styledview.StyledButton
+        android:id="@+id/refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="بارگذاری مجدد"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        android:visibility="gone" />
+
+</LinearLayout>
