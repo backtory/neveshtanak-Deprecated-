@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:paddingBottom="4dip"
+    android:paddingLeft="8dip"
+    android:paddingRight="8dip"
+    android:paddingTop="4dip" >
+
+    <LinearLayout
+        android:id="@+id/neveshtanak_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/neveshtanak_border"
+        android:orientation="vertical"
+        android:paddingLeft="0dip"
+        android:paddingTop="1dip"
+        android:paddingRight="1dip"
+        android:paddingBottom="1dip" >
+
+        <RelativeLayout
+            android:id="@+id/account_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingLeft="0dip"
+        android:paddingTop="2dip"
+        android:paddingRight="2dip"
+        android:paddingBottom="2dip"  >
+
+            <ImageView
+                android:id="@+id/account_image"
+                android:layout_width="48.0dip"
+                android:layout_height="48.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="18dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/profile_pic" />
+
+            <LinearLayout
+                android:id="@+id/neveshtanak_main_linear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/account_image"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:layout_toLeftOf="@id/account_image"
+                android:orientation="vertical"
+                android:padding="1dip" >
+
+                <ir.pegahtech.neveshtanak.app.styledview.StyledTextView
+                    android:id="@+id/neveshtanaker"
+                    style="@style/InsetText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right|center_vertical"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:maxLength="20"
+                    android:textSize="14sp" />
+
+                <ir.pegahtech.neveshtanak.app.styledview.StyledTextView
+                    android:id="@+id/likesAndComments"
+                    style="@style/TextView_NotImportant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:gravity="right|center_vertical"
+                    android:text="Time_stamp_Time" />
+            </LinearLayout>
+
+            
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.0dip"
+            android:background="@drawable/list_rule" />
+
+        <TextView
+            android:id="@+id/neveshtanak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dip"
+            android:layout_marginRight="16dip"
+            android:lineSpacingExtra="8dip"
+            android:gravity="right"
+            android:text="" />
+		<ImageView
+            android:id="@id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.0dip"
+            android:background="@drawable/list_rule" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:padding="5dip" >
+
+            <FrameLayout
+                android:id="@+id/neveshtanak_share"
+                android:layout_width="0dip"
+                android:layout_height="36dip"
+                android:layout_weight="1"
+                android:background="@null" >
+
+                <ImageButton
+                    android:id="@+id/neveshtanak_share_pic"
+                    android:layout_width="24dip"
+                    android:layout_height="24dip"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="24dip"
+                    android:background="@null"
+                    android:src="@drawable/ic_action_send_sms" >
+                </ImageButton>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/comment"
+                android:layout_width="0dip"
+                android:layout_height="36dip"
+                android:layout_weight="1"
+                android:background="@null" >
+
+                <LinearLayout
+                    android:id="@+id/llneveshtanak_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right|center_vertical"
+                    android:paddingRight="24dip"
+                    android:background="@null"
+                    android:orientation="horizontal" >
+
+                    <ir.pegahtech.neveshtanak.app.styledview.StyledTextView
+                        android:id="@+id/neveshtanak_comment_count"
+                        style="@style/TextView_NotImportant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:paddingLeft="4dip"
+                        android:paddingRight="4dip"
+                        android:singleLine="true"
+                        android:textColor="#80858585"
+                        android:text="" />
+
+                    <ImageButton
+                        android:id="@+id/neveshtanak_comment_pic"
+                        android:layout_width="24dip"
+                        android:layout_height="24dip"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="right|center_vertical"
+                        android:background="@null"
+                        android:src="@drawable/neveshtanak_comment" >
+                    </ImageButton>
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/neveshtanak_like"
+                android:layout_width="0dip"
+                android:layout_height="36dip"
+                android:layout_weight="1"
+                android:background="@null" >
+
+                <LinearLayout
+                    android:id="@+id/llneveshtanak_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="18dip"
+                    android:layout_gravity="right|center_vertical"
+                    android:background="@null"
+                    android:orientation="horizontal" >
+
+                    <ir.pegahtech.neveshtanak.app.styledview.StyledTextView
+                        android:id="@+id/neveshtanak_like_count"
+                        style="@style/TextView_NotImportant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:paddingLeft="4dip"
+                        android:paddingRight="4dip"
+                        android:singleLine="true"
+                        android:textColor="#80858585"
+                        android:text="" />
+
+                    <ImageButton
+                        android:id="@+id/neveshtanak_like_pic"
+                        android:layout_width="18dip"
+                        android:layout_height="18dip"
+                        android:layout_marginBottom="1dip"
+                        android:layout_marginRight="6dip"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="right|center_vertical"
+                        android:background="@null"
+                        android:src="@drawable/new_like" >
+                    </ImageButton>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

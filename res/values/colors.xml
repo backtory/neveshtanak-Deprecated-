@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent_background">#c0808080</color>
+    <color name="solid_white">#ffffffff</color>
+    <color name="trans_white">#a8ffffff</color>
+    <color name="trans_white_2">#48ffffff</color>
+    <color name="trans_blue">#b0c8c8c8</color>
+    <color name="toast_background_red">#ffff6600</color>
+    <color name="toast_background_blue">#ff0099ff</color>
+    <color name="gray_selection">#fafafa</color>
+    <color name="solid_gray">#333</color>
+    <color name="gray_good">#666</color>
+    <color name="action_bar_blue">#44bbff</color>
+    <color name="solid_black">#ff000000</color>
+    <color name="soft_black">#ff333333</color>
+    <color name="clear">#00000000</color>
+    <color name="primary_text">#ff424242</color>
+    <color name="secondary_text">#ff999999</color>
+    <color name="title_shadow_color">#55000000</color>
+    <color name="link_color">#ff2477b3</color>
+    <color name="section_shadow_color">#ff888888</color>
+    <color name="mentioned">#ffe7f1ff</color>
+    <color name="action_bar">#fff8f8f8</color>
+    <color name="action_bar_pressed">#ffd0d0d0</color>
+    <color name="button_text_disabled">#ffaaaaaa</color>
+    <color name="at_sign">#ff8abfe5</color>
+    <color name="notification">#ff00ff00</color>
+    <color name="image_overlay">#22000000</color>
+    <color name="bg_list">#ffe4e4e4</color>
+    <color name="translucent_black">#9a000000</color>
+    <color name="signup_error">#ffff0000</color>
+    <color name="list_divider_color">#ffececec</color>
+    <color name="dot">#ffcfcfcf</color>
+    <color name="bg_pressed">#ff45a3e5</color>
+    <color name="bg_focused">#fff8f8f8</color>
+    <!-- added by Hamid -->
+    <color name="neveshtanak_background">@android:color/white</color>
+    <color name="button_border">#2bf</color>
+    <color name="border">@android:color/black</color>
+    <color name="disabled_text">#777</color>
+    <color name="gray_transparent">#aa000000</color>
+    <color name="grey_my_grey">#D3D3D3</color>
+    <color name="gray_light">#fffafafa</color>
+    <color name="gray_light_border">#ffefefef</color>
+    <color name="gray_lightest">#fffdfdfd</color>
+    <color name="gray_lightest_border">#fff6f6f6</color>
+    <color name="transparent">#00000000</color>
+    <color name="default_screen_bg">#20324a</color>
+    <color name="rounded_container_bg">#80000000</color>
+    <color name="rounded_container_border">#3b3f44</color>
+    <color name="light_gray_header_color">#646663</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+
+    <color name="blue_main">#0099ff</color>
+    <color name="upload_image">#ffffff</color>    
+
+</resources>
