@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#fff" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right|center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dip"
+        android:padding="5dip"
+        android:weightSum="1" >
+
+        <FrameLayout
+            android:id="@+id/frame"
+            android:layout_width="60dip"
+            android:layout_height="30dip"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/neveshtanak_border" >
+
+            <Button
+                android:id="@+id/view_profile"
+                android:layout_width="60dip"
+                android:layout_height="30dip"
+                android:text="@string/suggestion_view"
+                android:gravity="center|center_vertical" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <ir.pegahtech.neveshtanak.styledview.StyledTextView
+                android:id="@+id/display_name"
+                style="?attr/spinnerDropDownItemStyle"
+                android:maxLength="15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:ellipsize="marquee"
+                android:gravity="right|center_vertical"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="#000" />
+
+            <ir.pegahtech.neveshtanak.styledview.StyledTextView
+                android:id="@+id/user_name"
+                style="?attr/spinnerDropDownItemStyle"
+                android:maxLength="25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:ellipsize="marquee"
+                android:gravity="right|center_vertical"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="#999" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="64dip"
+            android:layout_height="64dip"
+            android:layout_marginRight="8dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/profile_pic" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="5dip"
+        android:background="@color/grey_my_grey" />
+
+</LinearLayout>

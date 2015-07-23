@@ -2,13 +2,24 @@
 <resources>
 
     <string name="app_name">نوشتنک</string>
+    <string name="loading">در حال بارگذاری</string>
     <string name="best">محبوب</string>
     <string name="my_wall">دیوار من</string>
     <string name="favorite">علایق</string>
     <string name="others">بقیه</string>
     <string name="sent">ارسال شد</string>
     <string name="liked">لایک شد</string>
+    <string name="dot">.</string>
     <string name="liked_before">قبلا اینو لایک کردی;)</string>
     <string name="internet_error">مشکلی پیش آمد، اینترنت داری؟</string>
+    <string name="max_chars">حداکثر تعداد کلمات</string>
+    <string name="new_post_hint">چیزی بگو، حرفی بزن...</string>
+    <string name="suggestion_name">اسم طرف</string>
+    <string name="empty_layout_note">خالیه! اخوی... :دی</string>
+    <string name="suggestion_about">درباره طرف</string>
+    <string name="suggestion_view">مشاهده پروفایل طرف</string>
+    <string name="suggestion_message">با مشاهده پروفایل طرف نوشتنک های او را ببینید!</string>
+    <string name="connect_to_internet">وصلش کن به اینترنت</string>
+    
 
 </resources>

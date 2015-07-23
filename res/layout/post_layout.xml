@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#eeeeee" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="8dip"
+        android:background="@drawable/bg_dialog_textarea" >
+
+        <RelativeLayout
+            android:id="@id/account_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:padding="5dip" >
+
+            <ImageView
+                android:id="@id/account_image"
+                android:layout_width="48.0dip"
+                android:layout_height="48.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dip"
+                android:layout_marginTop="16dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/profile_pic" />
+
+            <ir.pegahtech.neveshtanak.styledview.StyledTextView
+                android:id="@+id/account_name"
+                style="@style/InsetText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dip"
+                android:layout_marginTop="16dip"
+                android:layout_toLeftOf="@id/account_image"
+                android:paddingLeft="24dip"
+                android:singleLine="true"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/count"
+                style="@style/InsetText.CharCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="16dip"
+                android:paddingLeft="24dip"
+                android:shadowColor="@color/solid_white"
+                android:text="@string/max_chars"
+                android:textColor="@color/secondary_text"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/text_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/account_row"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:padding="5dip" >
+
+            <EditText
+                android:id="@+id/edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:completionThreshold="250"
+                android:gravity="top|right|center_vertical"
+                android:hint="@string/new_post_hint"
+                android:imeOptions="actionSend"
+                android:inputType="textNoSuggestions|textCapSentences|textAutoCorrect|textMultiLine|textShortMessage|textVisiblePassword"
+                android:lineSpacingMultiplier="1.2"
+                android:maxLength="250"
+                android:paddingRight="24dip"
+                android:scrollbars="vertical"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" >
+            </EditText>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1.0dip"
+        android:background="@drawable/list_rule" />
+
+</RelativeLayout>

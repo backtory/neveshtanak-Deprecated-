@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:baselineAligned="false"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/neveshtanak_border" >
+    <RelativeLayout
+        android:orientation="horizontal"
+	    android:layout_width="0dp"
+	    android:layout_height="match_parent"
+	    android:layout_weight="3" >
+	   	<Button 
+	   	    android:layout_width="wrap_content"
+	   	    android:layout_height="wrap_content"
+	   	    android:layout_gravity="center"
+	   	    android:layout_alignParentLeft="true"
+	   	    android:layout_centerInParent="true"
+	   	    android:text="@string/suggestion_view"/>
+     	<TextView 
+       	    android:id="@+id/suggestion_name"
+       	    android:layout_width="wrap_content"
+       		android:layout_height="wrap_content"
+       		android:layout_alignParentTop="true"
+       		android:layout_alignParentRight="true"
+       		android:text="@string/suggestion_name" />
+
+   		<TextView
+    	    android:id="@+id/suggestion_about"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:text="@string/suggestion_about"
+    	    android:layout_alignParentRight="true"
+    	    android:layout_below="@id/suggestion_name" />
+   		<TextView 
+   		    android:id="@+id/suggestion_like"
+   		    android:layout_width="wrap_content"
+   			android:layout_height="wrap_content"
+   			android:layout_toLeftOf="@id/suggestion_about"
+   			android:layout_above="@id/suggestion_about"
+   			android:text="1000"/>
+   	</RelativeLayout>
+	<LinearLayout 
+	    android:layout_width="0dp"
+	   	android:layout_height="wrap_content"
+	   	android:layout_weight="1"
+	   	android:gravity="center" >
+	   	<ImageButton
+	   	    android:id="@+id/suggestion_pic"
+	   	    style="@style/Button.Action"
+	   	    android:layout_width="wrap_content"
+	   	    android:layout_height="wrap_content"
+	   	    android:background="@drawable/profile_pic" />
+	</LinearLayout>
+</LinearLayout>

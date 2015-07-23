@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/suggestion_layout"
+    style="@style/List_row"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/neveshtanak_message_background"
+    android:orientation="vertical"
+    android:paddingRight="10dip"
+    android:paddingBottom="0dip" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ir.pegahtech.neveshtanak.styledview.StyledTextView
+            android:id="@id/title"
+            style="@style/InsetText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="@string/suggestion_message"
+            android:textColor="@color/grey_my_grey"
+            android:textSize="12dip" />
+
+ 
+    </RelativeLayout>
+
+</LinearLayout>

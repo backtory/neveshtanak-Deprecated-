@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:layout_weight="1.0"
+    android:background="@null"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ir.pegahtech.neveshtanak.styledview.StyledTextView
+        android:id="@+id/list_empty_text"
+        style="@style/colored_dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dip"
+        android:text="@string/empty_layout_note" />
+
+    <ir.pegahtech.neveshtanak.styledview.StyledButton
+        android:id="@+id/connectORloadMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dip"
+        android:text="@string/connect_to_internet"
+        android:textColor="@color/solid_white"
+        android:textSize="18sp" />
+
+</LinearLayout>
