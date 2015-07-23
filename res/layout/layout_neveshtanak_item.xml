@@ -90,6 +90,7 @@
             android:layout_marginRight="16dip"
             android:lineSpacingExtra="8dip"
             android:gravity="right"
+            android:textColor="@android:color/black"
             android:text="" />
 		<ImageView
             android:id="@id/divider"

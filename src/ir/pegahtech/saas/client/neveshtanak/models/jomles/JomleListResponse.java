@@ -7,7 +7,7 @@ import java.util.Date;
 
 import ir.pegahtech.saas.client.shared.models.*;
 import ir.pegahtech.saas.client.Neveshtanak.models.mobileusers.*;
-import ir.pegahtech.saas.client.Neveshtanak.models.likes.*;
+import ir.pegahtech.saas.client.Neveshtanak.models.jomlelikes.*;
 import ir.pegahtech.saas.client.Neveshtanak.models.jomles.*;
 
 

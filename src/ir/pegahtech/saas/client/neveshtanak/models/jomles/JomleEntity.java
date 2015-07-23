@@ -7,7 +7,7 @@ import java.util.Date;
 
 import ir.pegahtech.saas.client.shared.models.*;
 import ir.pegahtech.saas.client.Neveshtanak.models.mobileusers.*;
-import ir.pegahtech.saas.client.Neveshtanak.models.likes.*;
+import ir.pegahtech.saas.client.Neveshtanak.models.jomlelikes.*;
 import ir.pegahtech.saas.client.Neveshtanak.models.jomles.*;
 
 
@@ -58,7 +58,7 @@ public class JomleEntity extends BaseModel {
 	private String UserName;
 
 	@SerializedName("Likes")
-	private List<LikeEntity> Likes;
+	private List<JomleLikeEntity> Likes;
 
 
 	
@@ -126,10 +126,10 @@ public class JomleEntity extends BaseModel {
 		this.UserName = UserName;
 		notifyChange("UserName", UserName);
 	}
-	public List<LikeEntity> getLikes() {
+	public List<JomleLikeEntity> getLikes() {
 		return Likes;
 	}
-	public void setLikes(List<LikeEntity> Likes) {
+	public void setLikes(List<JomleLikeEntity> Likes) {
 		this.Likes = Likes;
 		notifyChange("Likes", Likes);
 	}

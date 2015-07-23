@@ -1,4 +1,4 @@
-package ir.pegahtech.saas.client.Neveshtanak.models.likes;
+package ir.pegahtech.saas.client.Neveshtanak.models.jomlelikes;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -7,14 +7,14 @@ import java.util.Date;
 
 import ir.pegahtech.saas.client.shared.models.*;
 import ir.pegahtech.saas.client.Neveshtanak.models.mobileusers.*;
-import ir.pegahtech.saas.client.Neveshtanak.models.likes.*;
+import ir.pegahtech.saas.client.Neveshtanak.models.jomlelikes.*;
 import ir.pegahtech.saas.client.Neveshtanak.models.jomles.*;
 
 
 import ir.pegahtech.saas.client.shared.enums.*;
 
 
-public class LikeEntity extends BaseModel {
+public class JomleLikeEntity extends BaseModel {
 
 	public static final String COLUMN_Guid = "Guid";
 	public static final String COLUMN_CreationDate = "CreationDate";

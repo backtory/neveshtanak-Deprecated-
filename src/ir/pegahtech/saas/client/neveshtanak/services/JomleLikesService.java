@@ -1,7 +1,7 @@
 package ir.pegahtech.saas.client.Neveshtanak.services;
 
 import ir.pegahtech.saas.client.Neveshtanak.NeveshtanakConfiguration;
-import ir.pegahtech.saas.client.Neveshtanak.models.likes.*;
+import ir.pegahtech.saas.client.Neveshtanak.models.jomlelikes.*;
 import ir.pegahtech.saas.client.shared.http.CacheControlBuilder;
 import ir.pegahtech.saas.client.shared.enums.*;
 import ir.pegahtech.saas.client.shared.security.*;
@@ -20,14 +20,14 @@ import java.util.*;
 //import com.google.gson.reflect.TypeToken;
 
 /**
- * Class LikesService helps you retrieve list of Likes, 
- * Create new Like, 
- * Change Info of a(n) Like 
+ * Class JomleLikesService helps you retrieve list of JomleLikes, 
+ * Create new JomleLike, 
+ * Change Info of a(n) JomleLike 
  * or Delete one of them. If you enable tag or category support for this class, 
  * You'll be able to access some utilities for them in this service
  */
 
-public class LikesService {
+public class JomleLikesService {
 
     public <T> void customList(final ListRequest request,  final ServiceCallback<T> callback, Class<T> cls) {
         customList(request, callback, null, cls);
@@ -37,7 +37,7 @@ public class LikesService {
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/list?start={start}&pageSize={pageSize}&includeDeleted={includeDeleted}&includeUndeleted={includeUndeleted}";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "customList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "customList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
         Map<String, Object> pathParams = new HashMap<String, Object>();
         Object postData = null;
 
@@ -56,7 +56,7 @@ public class LikesService {
                     @Override
                     public void run() {
                         callback.success(object);
-                        NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "customList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                        NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "customList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -67,7 +67,7 @@ public class LikesService {
                     @Override
                     public void run() {
                         callback.fail(resultCode);
-                       NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "customList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                       NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "customList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -94,7 +94,7 @@ public class LikesService {
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/list?start={start}&pageSize={pageSize}&includeDeleted={includeDeleted}&includeUndeleted={includeUndeleted}";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "customList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "customList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        Map<String, Object> pathParams = new HashMap<String, Object>();
        Object postData = null;
 
@@ -118,23 +118,23 @@ public class LikesService {
                     cls
             );
         } catch (IOException e) {
-           NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "customList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+           NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "customList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
             throw new NetworkFailureException(e);
         }
 
 
-       NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "customList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "customList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        return object;
     }
-    public  void list(final ListRequest request,  final ServiceCallback<LikeListResponse> callback) {
+    public  void list(final ListRequest request,  final ServiceCallback<JomleLikeListResponse> callback) {
         list(request, callback, null);
     }
-   public  void list(final ListRequest request,  final ServiceCallback<LikeListResponse> callback, CacheControlBuilder cacheBuilder ) {
+   public  void list(final ListRequest request,  final ServiceCallback<JomleLikeListResponse> callback, CacheControlBuilder cacheBuilder ) {
        String accessToken = NeveshtanakConfiguration.instance().getDataProvider().load("SAAS_access_token");
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/list?start={start}&pageSize={pageSize}&includeDeleted={includeDeleted}&includeUndeleted={includeUndeleted}";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "list", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "list", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
         Map<String, Object> pathParams = new HashMap<String, Object>();
         Object postData = null;
 
@@ -146,14 +146,14 @@ public class LikesService {
 			postData = request.getQueryObject();
 
 
-        ServiceCallback<LikeListResponse> callBackTemp = new ServiceCallback<LikeListResponse>() {
+        ServiceCallback<JomleLikeListResponse> callBackTemp = new ServiceCallback<JomleLikeListResponse>() {
             @Override
-            public void success(final LikeListResponse object) {
+            public void success(final JomleLikeListResponse object) {
                 NeveshtanakConfiguration.instance().getDataProvider().runOnMainThread(new Runnable() {
                     @Override
                     public void run() {
                         callback.success(object);
-                        NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "list", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                        NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "list", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -164,7 +164,7 @@ public class LikesService {
                     @Override
                     public void run() {
                         callback.fail(resultCode);
-                       NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "list", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                       NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "list", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -177,21 +177,21 @@ public class LikesService {
                     pathParams,
                     postData,
                     cacheBuilder,
-                    LikeListResponse.class,
+                    JomleLikeListResponse.class,
                     callBackTemp
                 );
 	}
-    public  LikeListResponse listSync(final ListRequest request) throws NetworkFailureException {
+    public  JomleLikeListResponse listSync(final ListRequest request) throws NetworkFailureException {
         return listSync(request, null);
     }
 
-   public  LikeListResponse listSync(final ListRequest request,  CacheControlBuilder cacheBuilder)
+   public  JomleLikeListResponse listSync(final ListRequest request,  CacheControlBuilder cacheBuilder)
        throws NetworkFailureException {
        String accessToken = NeveshtanakConfiguration.instance().getDataProvider().load("SAAS_access_token");
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/list?start={start}&pageSize={pageSize}&includeDeleted={includeDeleted}&includeUndeleted={includeUndeleted}";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "list", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "list", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        Map<String, Object> pathParams = new HashMap<String, Object>();
        Object postData = null;
 
@@ -203,7 +203,7 @@ public class LikesService {
 			postData = request.getQueryObject();
 
 
-       LikeListResponse object = null;
+       JomleLikeListResponse object = null;
        try {
             object = HttpConnectionUtility.getParsedDataFromUrlSync(
                     NeveshtanakConfiguration.instance(),
@@ -212,26 +212,26 @@ public class LikesService {
                     pathParams,
                     postData,
                     cacheBuilder,
-                    LikeListResponse.class
+                    JomleLikeListResponse.class
             );
         } catch (IOException e) {
-           NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "list", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+           NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "list", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
             throw new NetworkFailureException(e);
         }
 
 
-       NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "list", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "list", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        return object;
     }
-    public  void create(final LikeEntity request,  final ServiceCallback<InsertUpdateResponse> callback) {
+    public  void create(final JomleLikeEntity request,  final ServiceCallback<InsertUpdateResponse> callback) {
         create(request, callback, null);
     }
-   public  void create(final LikeEntity request,  final ServiceCallback<InsertUpdateResponse> callback, CacheControlBuilder cacheBuilder ) {
+   public  void create(final JomleLikeEntity request,  final ServiceCallback<InsertUpdateResponse> callback, CacheControlBuilder cacheBuilder ) {
        String accessToken = NeveshtanakConfiguration.instance().getDataProvider().load("SAAS_access_token");
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/create_and_get";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "create", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "create", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
         Map<String, Object> pathParams = new HashMap<String, Object>();
         Object postData = null;
 
@@ -247,7 +247,7 @@ public class LikesService {
                     @Override
                     public void run() {
                         callback.success(object);
-                        NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "create", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                        NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "create", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -258,7 +258,7 @@ public class LikesService {
                     @Override
                     public void run() {
                         callback.fail(resultCode);
-                       NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "create", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                       NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "create", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -275,17 +275,17 @@ public class LikesService {
                     callBackTemp
                 );
 	}
-    public  InsertUpdateResponse createSync(final LikeEntity request) throws NetworkFailureException {
+    public  InsertUpdateResponse createSync(final JomleLikeEntity request) throws NetworkFailureException {
         return createSync(request, null);
     }
 
-   public  InsertUpdateResponse createSync(final LikeEntity request,  CacheControlBuilder cacheBuilder)
+   public  InsertUpdateResponse createSync(final JomleLikeEntity request,  CacheControlBuilder cacheBuilder)
        throws NetworkFailureException {
        String accessToken = NeveshtanakConfiguration.instance().getDataProvider().load("SAAS_access_token");
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/create_and_get";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "create", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "create", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        Map<String, Object> pathParams = new HashMap<String, Object>();
        Object postData = null;
 
@@ -305,24 +305,24 @@ public class LikesService {
                     InsertUpdateResponse.class
             );
         } catch (IOException e) {
-           NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "create", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+           NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "create", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
             throw new NetworkFailureException(e);
         }
 
 			new ContentCreateBuilder().update(request,object);
 
-       NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "create", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "create", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        return object;
     }
-    public  void createList(final List<LikeEntity> request,  final ServiceCallback<InsertUpdateListResponse> callback) {
+    public  void createList(final List<JomleLikeEntity> request,  final ServiceCallback<InsertUpdateListResponse> callback) {
         createList(request, callback, null);
     }
-   public  void createList(final List<LikeEntity> request,  final ServiceCallback<InsertUpdateListResponse> callback, CacheControlBuilder cacheBuilder ) {
+   public  void createList(final List<JomleLikeEntity> request,  final ServiceCallback<InsertUpdateListResponse> callback, CacheControlBuilder cacheBuilder ) {
        String accessToken = NeveshtanakConfiguration.instance().getDataProvider().load("SAAS_access_token");
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/create_all";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "createList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "createList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
         Map<String, Object> pathParams = new HashMap<String, Object>();
         Object postData = null;
 
@@ -338,7 +338,7 @@ public class LikesService {
                     @Override
                     public void run() {
                         callback.success(object);
-                        NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "createList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                        NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "createList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -349,7 +349,7 @@ public class LikesService {
                     @Override
                     public void run() {
                         callback.fail(resultCode);
-                       NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "createList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                       NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "createList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -366,17 +366,17 @@ public class LikesService {
                     callBackTemp
                 );
 	}
-    public  InsertUpdateListResponse createListSync(final List<LikeEntity> request) throws NetworkFailureException {
+    public  InsertUpdateListResponse createListSync(final List<JomleLikeEntity> request) throws NetworkFailureException {
         return createListSync(request, null);
     }
 
-   public  InsertUpdateListResponse createListSync(final List<LikeEntity> request,  CacheControlBuilder cacheBuilder)
+   public  InsertUpdateListResponse createListSync(final List<JomleLikeEntity> request,  CacheControlBuilder cacheBuilder)
        throws NetworkFailureException {
        String accessToken = NeveshtanakConfiguration.instance().getDataProvider().load("SAAS_access_token");
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/create_all";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "createList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "createList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        Map<String, Object> pathParams = new HashMap<String, Object>();
        Object postData = null;
 
@@ -396,24 +396,24 @@ public class LikesService {
                     InsertUpdateListResponse.class
             );
         } catch (IOException e) {
-           NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "createList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+           NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "createList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
             throw new NetworkFailureException(e);
         }
 
 			new ContentCreateBuilder().updateAll(request,object);
 
-       NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "createList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "createList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        return object;
     }
-    public  void updateList(final List<LikeEntity> request,  final ServiceCallback<InsertUpdateListResponse> callback) {
+    public  void updateList(final List<JomleLikeEntity> request,  final ServiceCallback<InsertUpdateListResponse> callback) {
         updateList(request, callback, null);
     }
-   public  void updateList(final List<LikeEntity> request,  final ServiceCallback<InsertUpdateListResponse> callback, CacheControlBuilder cacheBuilder ) {
+   public  void updateList(final List<JomleLikeEntity> request,  final ServiceCallback<InsertUpdateListResponse> callback, CacheControlBuilder cacheBuilder ) {
        String accessToken = NeveshtanakConfiguration.instance().getDataProvider().load("SAAS_access_token");
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/update_all";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "updateList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "updateList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
         Map<String, Object> pathParams = new HashMap<String, Object>();
         Object postData = null;
 
@@ -429,7 +429,7 @@ public class LikesService {
                     @Override
                     public void run() {
                         callback.success(object);
-                        NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "updateList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                        NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "updateList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -440,7 +440,7 @@ public class LikesService {
                     @Override
                     public void run() {
                         callback.fail(resultCode);
-                       NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "updateList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                       NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "updateList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -457,17 +457,17 @@ public class LikesService {
                     callBackTemp
                 );
 	}
-    public  InsertUpdateListResponse updateListSync(final List<LikeEntity> request) throws NetworkFailureException {
+    public  InsertUpdateListResponse updateListSync(final List<JomleLikeEntity> request) throws NetworkFailureException {
         return updateListSync(request, null);
     }
 
-   public  InsertUpdateListResponse updateListSync(final List<LikeEntity> request,  CacheControlBuilder cacheBuilder)
+   public  InsertUpdateListResponse updateListSync(final List<JomleLikeEntity> request,  CacheControlBuilder cacheBuilder)
        throws NetworkFailureException {
        String accessToken = NeveshtanakConfiguration.instance().getDataProvider().load("SAAS_access_token");
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/update_all";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "updateList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "updateList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        Map<String, Object> pathParams = new HashMap<String, Object>();
        Object postData = null;
 
@@ -487,24 +487,24 @@ public class LikesService {
                     InsertUpdateListResponse.class
             );
         } catch (IOException e) {
-           NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "updateList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+           NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "updateList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
             throw new NetworkFailureException(e);
         }
 
 			new ContentUpdateBuilder().updateAll(request,object);
 
-       NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "updateList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "updateList", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        return object;
     }
-    public  void update(final LikeEntity request,  final ServiceCallback<InsertUpdateResponse> callback) {
+    public  void update(final JomleLikeEntity request,  final ServiceCallback<InsertUpdateResponse> callback) {
         update(request, callback, null);
     }
-   public  void update(final LikeEntity request,  final ServiceCallback<InsertUpdateResponse> callback, CacheControlBuilder cacheBuilder ) {
+   public  void update(final JomleLikeEntity request,  final ServiceCallback<InsertUpdateResponse> callback, CacheControlBuilder cacheBuilder ) {
        String accessToken = NeveshtanakConfiguration.instance().getDataProvider().load("SAAS_access_token");
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/update_single";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "update", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "update", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
         Map<String, Object> pathParams = new HashMap<String, Object>();
         Object postData = null;
 
@@ -520,7 +520,7 @@ public class LikesService {
                     @Override
                     public void run() {
                         callback.success(object);
-                        NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "update", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                        NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "update", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -531,7 +531,7 @@ public class LikesService {
                     @Override
                     public void run() {
                         callback.fail(resultCode);
-                       NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "update", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                       NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "update", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -548,17 +548,17 @@ public class LikesService {
                     callBackTemp
                 );
 	}
-    public  InsertUpdateResponse updateSync(final LikeEntity request) throws NetworkFailureException {
+    public  InsertUpdateResponse updateSync(final JomleLikeEntity request) throws NetworkFailureException {
         return updateSync(request, null);
     }
 
-   public  InsertUpdateResponse updateSync(final LikeEntity request,  CacheControlBuilder cacheBuilder)
+   public  InsertUpdateResponse updateSync(final JomleLikeEntity request,  CacheControlBuilder cacheBuilder)
        throws NetworkFailureException {
        String accessToken = NeveshtanakConfiguration.instance().getDataProvider().load("SAAS_access_token");
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/update_single";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "update", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "update", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        Map<String, Object> pathParams = new HashMap<String, Object>();
        Object postData = null;
 
@@ -578,24 +578,24 @@ public class LikesService {
                     InsertUpdateResponse.class
             );
         } catch (IOException e) {
-           NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "update", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+           NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "update", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
             throw new NetworkFailureException(e);
         }
 
 			new ContentUpdateBuilder().update(request,object);
 
-       NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "update", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "update", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        return object;
     }
-    public  void deleteLike(final DeleteRequest request,  final ServiceCallback<QueryOutputNumber> callback) {
-        deleteLike(request, callback, null);
+    public  void deleteJomleLike(final DeleteRequest request,  final ServiceCallback<QueryOutputNumber> callback) {
+        deleteJomleLike(request, callback, null);
     }
-   public  void deleteLike(final DeleteRequest request,  final ServiceCallback<QueryOutputNumber> callback, CacheControlBuilder cacheBuilder ) {
+   public  void deleteJomleLike(final DeleteRequest request,  final ServiceCallback<QueryOutputNumber> callback, CacheControlBuilder cacheBuilder ) {
        String accessToken = NeveshtanakConfiguration.instance().getDataProvider().load("SAAS_access_token");
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/delete";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "deleteLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "deleteJomleLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
         Map<String, Object> pathParams = new HashMap<String, Object>();
         Object postData = null;
 
@@ -610,7 +610,7 @@ public class LikesService {
                     @Override
                     public void run() {
                         callback.success(object);
-                        NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "deleteLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                        NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "deleteJomleLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -621,7 +621,7 @@ public class LikesService {
                     @Override
                     public void run() {
                         callback.fail(resultCode);
-                       NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "deleteLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                       NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "deleteJomleLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -638,17 +638,17 @@ public class LikesService {
                     callBackTemp
                 );
 	}
-    public  QueryOutputNumber deleteLikeSync(final DeleteRequest request) throws NetworkFailureException {
-        return deleteLikeSync(request, null);
+    public  QueryOutputNumber deleteJomleLikeSync(final DeleteRequest request) throws NetworkFailureException {
+        return deleteJomleLikeSync(request, null);
     }
 
-   public  QueryOutputNumber deleteLikeSync(final DeleteRequest request,  CacheControlBuilder cacheBuilder)
+   public  QueryOutputNumber deleteJomleLikeSync(final DeleteRequest request,  CacheControlBuilder cacheBuilder)
        throws NetworkFailureException {
        String accessToken = NeveshtanakConfiguration.instance().getDataProvider().load("SAAS_access_token");
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/delete";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "deleteLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "deleteJomleLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        Map<String, Object> pathParams = new HashMap<String, Object>();
        Object postData = null;
 
@@ -668,23 +668,23 @@ public class LikesService {
                     QueryOutputNumber.class
             );
         } catch (IOException e) {
-           NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "deleteLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+           NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "deleteJomleLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
             throw new NetworkFailureException(e);
         }
 
 
-       NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "deleteLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "deleteJomleLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        return object;
     }
-    public  void restoreLike(final RestoreRequest request,  final ServiceCallback<QueryOutputNumber> callback) {
-        restoreLike(request, callback, null);
+    public  void restoreJomleLike(final RestoreRequest request,  final ServiceCallback<QueryOutputNumber> callback) {
+        restoreJomleLike(request, callback, null);
     }
-   public  void restoreLike(final RestoreRequest request,  final ServiceCallback<QueryOutputNumber> callback, CacheControlBuilder cacheBuilder ) {
+   public  void restoreJomleLike(final RestoreRequest request,  final ServiceCallback<QueryOutputNumber> callback, CacheControlBuilder cacheBuilder ) {
        String accessToken = NeveshtanakConfiguration.instance().getDataProvider().load("SAAS_access_token");
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/restore";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "restoreLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "restoreJomleLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
         Map<String, Object> pathParams = new HashMap<String, Object>();
         Object postData = null;
 
@@ -699,7 +699,7 @@ public class LikesService {
                     @Override
                     public void run() {
                         callback.success(object);
-                        NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "restoreLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                        NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "restoreJomleLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -710,7 +710,7 @@ public class LikesService {
                     @Override
                     public void run() {
                         callback.fail(resultCode);
-                       NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "restoreLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+                       NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "restoreJomleLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
                     }
                 });
             }
@@ -727,17 +727,17 @@ public class LikesService {
                     callBackTemp
                 );
 	}
-    public  QueryOutputNumber restoreLikeSync(final RestoreRequest request) throws NetworkFailureException {
-        return restoreLikeSync(request, null);
+    public  QueryOutputNumber restoreJomleLikeSync(final RestoreRequest request) throws NetworkFailureException {
+        return restoreJomleLikeSync(request, null);
     }
 
-   public  QueryOutputNumber restoreLikeSync(final RestoreRequest request,  CacheControlBuilder cacheBuilder)
+   public  QueryOutputNumber restoreJomleLikeSync(final RestoreRequest request,  CacheControlBuilder cacheBuilder)
        throws NetworkFailureException {
        String accessToken = NeveshtanakConfiguration.instance().getDataProvider().load("SAAS_access_token");
        final String url = NeveshtanakConfiguration.serviceRootUrl + "api/content/e7bf52e6-a25f-40a4-b849-571ab6810439/restore";
        //url = url + (accessToken == null ? "" : ((url.contains("?") ? "&" : "?") + "access_token=" + accessToken));
 
-       NeveshtanakConfiguration.instance().serviceStarted(true, "Like", "restoreLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceStarted(true, "JomleLike", "restoreJomleLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        Map<String, Object> pathParams = new HashMap<String, Object>();
        Object postData = null;
 
@@ -757,12 +757,12 @@ public class LikesService {
                     QueryOutputNumber.class
             );
         } catch (IOException e) {
-           NeveshtanakConfiguration.instance().serviceFailed(true, "Like", "restoreLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+           NeveshtanakConfiguration.instance().serviceFailed(true, "JomleLike", "restoreJomleLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
             throw new NetworkFailureException(e);
         }
 
 
-       NeveshtanakConfiguration.instance().serviceSucceed(true, "Like", "restoreLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
+       NeveshtanakConfiguration.instance().serviceSucceed(true, "JomleLike", "restoreJomleLike", url, "e7bf52e6-a25f-40a4-b849-571ab6810439", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        return object;
     }
 }

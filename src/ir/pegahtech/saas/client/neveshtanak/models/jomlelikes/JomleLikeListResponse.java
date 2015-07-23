@@ -1,4 +1,4 @@
-package ir.pegahtech.saas.client.Neveshtanak.models.likes;
+package ir.pegahtech.saas.client.Neveshtanak.models.jomlelikes;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -7,14 +7,14 @@ import java.util.Date;
 
 import ir.pegahtech.saas.client.shared.models.*;
 import ir.pegahtech.saas.client.Neveshtanak.models.mobileusers.*;
-import ir.pegahtech.saas.client.Neveshtanak.models.likes.*;
+import ir.pegahtech.saas.client.Neveshtanak.models.jomlelikes.*;
 import ir.pegahtech.saas.client.Neveshtanak.models.jomles.*;
 
 
 import ir.pegahtech.saas.client.shared.enums.*;
 
 
-public class LikeListResponse extends BaseModel {
+public class JomleLikeListResponse extends BaseModel {
 
 
 
@@ -24,7 +24,7 @@ public class LikeListResponse extends BaseModel {
 	private Integer totalCount;
 
 	@SerializedName("data")
-	private List<LikeEntity> data;
+	private List<JomleLikeEntity> data;
 
 
 	
@@ -36,10 +36,10 @@ public class LikeListResponse extends BaseModel {
 		this.totalCount = totalCount;
 		notifyChange("TotalCount", totalCount);
 	}
-	public List<LikeEntity> getData() {
+	public List<JomleLikeEntity> getData() {
 		return data;
 	}
-	public void setData(List<LikeEntity> data) {
+	public void setData(List<JomleLikeEntity> data) {
 		this.data = data;
 		notifyChange("Data", data);
 	}

@@ -72,9 +72,9 @@ public class FirstPage extends ActionBarActivity {
 				false));
 		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_LikeCount,
 				false));
-		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_LikeCount,
-				false));
 		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_CreationDate,
+				false));
+		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_LikeCount,
 				false));
 		adapter = new MyPagerAdapter(getSupportFragmentManager(), fragments);
 		pager.setAdapter(adapter);
