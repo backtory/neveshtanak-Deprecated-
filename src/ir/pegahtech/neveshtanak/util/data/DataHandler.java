@@ -38,4 +38,17 @@ public class DataHandler {
 	public String getUserName() {
 		return sp.getString("user-name", null);
 	}
+	
+	public void save(String key, String val){
+		editor.putString(key, val);
+		editor.commit();
+	}
+	
+	public String get(String key){
+		return sp.getString(key, null);
+	}
+	
+	public void remove(String key){
+		editor.remove(key);
+	}
 }

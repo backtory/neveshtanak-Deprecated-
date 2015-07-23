@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Date;
 
 import ir.pegahtech.saas.client.shared.models.*;
+import ir.pegahtech.saas.client.neveshtanak.models.mobileusers.*;
 import ir.pegahtech.saas.client.neveshtanak.models.likes.*;
 import ir.pegahtech.saas.client.neveshtanak.models.jomles.*;
 
@@ -21,12 +22,11 @@ public class JomleEntity extends BaseModel {
 	public static final String COLUMN_LastModifiedDate = "LastModifiedDate";
 	public static final String COLUMN_Owner_ID = "Owner_ID";
 	public static final String COLUMN_jomle = "jomle";
-	public static final String COLUMN_likesCount = "likesCount";
+	public static final String COLUMN_likeCount = "likeCount";
 	public static final String COLUMN_userId = "userId";
 	public static final String COLUMN_userName = "userName";
 
 
-	public static final String INCLUDE_jomleList = "jomleList";
 
 
 	@SerializedName("Guid")
@@ -47,17 +47,14 @@ public class JomleEntity extends BaseModel {
 	@SerializedName("jomle")
 	private String jomle;
 
-	@SerializedName("likesCount")
-	private Integer likesCount;
+	@SerializedName("likeCount")
+	private Integer likeCount;
 
 	@SerializedName("userId")
 	private String userId;
 
 	@SerializedName("userName")
 	private String userName;
-
-	@SerializedName("jomleList")
-	private List<LikeEntity> jomleList;
 
 
 	
@@ -104,12 +101,12 @@ public class JomleEntity extends BaseModel {
 		this.jomle = jomle;
 		notifyChange("Jomle", jomle);
 	}
-	public Integer getLikesCount() {
-		return likesCount;
+	public Integer getLikeCount() {
+		return likeCount;
 	}
-	public void setLikesCount(Integer likesCount) {
-		this.likesCount = likesCount;
-		notifyChange("LikesCount", likesCount);
+	public void setLikeCount(Integer likeCount) {
+		this.likeCount = likeCount;
+		notifyChange("LikeCount", likeCount);
 	}
 	public String getUserId() {
 		return userId;
@@ -124,13 +121,6 @@ public class JomleEntity extends BaseModel {
 	public void setUserName(String userName) {
 		this.userName = userName;
 		notifyChange("UserName", userName);
-	}
-	public List<LikeEntity> getJomleList() {
-		return jomleList;
-	}
-	public void setJomleList(List<LikeEntity> jomleList) {
-		this.jomleList = jomleList;
-		notifyChange("JomleList", jomleList);
 	}
 
 }

@@ -22,7 +22,7 @@
         </ListView>
     </android.support.v4.widget.SwipeRefreshLayout>
     
-    <com.meyar.instaboard.styledview.StyledTextView 
+    <ir.pegahtech.neveshtanak.styledview.StyledTextView 
         android:id="@+id/no_jomle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         android:textSize="25sp"
         android:visibility="gone"/>
 
-    <com.meyar.instaboard.styledview.StyledTextView
+    <ir.pegahtech.neveshtanak.styledview.StyledTextView
         android:id="@+id/loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
         android:textColor="@android:color/black"
         android:textSize="25sp" />
 
-    <com.meyar.instaboard.styledview.StyledTextView
+    <ir.pegahtech.neveshtanak.styledview.StyledTextView
         android:id="@+id/loading_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
         android:textSize="25sp"
         android:visibility="gone" />
 
-    <com.meyar.instaboard.styledview.StyledButton
+    <ir.pegahtech.neveshtanak.styledview.StyledButton
         android:id="@+id/refresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

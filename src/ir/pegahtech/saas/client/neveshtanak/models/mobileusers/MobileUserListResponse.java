@@ -1,4 +1,4 @@
-package ir.pegahtech.saas.client.neveshtanak.models.jomles;
+package ir.pegahtech.saas.client.neveshtanak.models.mobileusers;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -14,7 +14,7 @@ import ir.pegahtech.saas.client.neveshtanak.models.jomles.*;
 import ir.pegahtech.saas.client.shared.enums.*;
 
 
-public class JomleListResponse extends BaseModel {
+public class MobileUserListResponse extends BaseModel {
 
 
 
@@ -24,7 +24,7 @@ public class JomleListResponse extends BaseModel {
 	private Integer totalCount;
 
 	@SerializedName("data")
-	private List<JomleEntity> data;
+	private List<MobileUserEntity> data;
 
 
 	
@@ -36,10 +36,10 @@ public class JomleListResponse extends BaseModel {
 		this.totalCount = totalCount;
 		notifyChange("TotalCount", totalCount);
 	}
-	public List<JomleEntity> getData() {
+	public List<MobileUserEntity> getData() {
 		return data;
 	}
-	public void setData(List<JomleEntity> data) {
+	public void setData(List<MobileUserEntity> data) {
 		this.data = data;
 		notifyChange("Data", data);
 	}

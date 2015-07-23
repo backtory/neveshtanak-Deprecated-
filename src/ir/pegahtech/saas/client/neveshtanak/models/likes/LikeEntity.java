@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Date;
 
 import ir.pegahtech.saas.client.shared.models.*;
+import ir.pegahtech.saas.client.neveshtanak.models.mobileusers.*;
 import ir.pegahtech.saas.client.neveshtanak.models.likes.*;
 import ir.pegahtech.saas.client.neveshtanak.models.jomles.*;
 
@@ -24,7 +25,7 @@ public class LikeEntity extends BaseModel {
 	public static final String COLUMN_userId = "userId";
 
 
-	public static final String INCLUDE_RelaedJomle = "RelaedJomle";
+	public static final String INCLUDE_RelatedJomle = "RelatedJomle";
 
 
 	@SerializedName("Guid")
@@ -48,8 +49,8 @@ public class LikeEntity extends BaseModel {
 	@SerializedName("userId")
 	private String userId;
 
-	@SerializedName("RelaedJomle")
-	private JomleEntity RelaedJomle;
+	@SerializedName("RelatedJomle")
+	private JomleEntity RelatedJomle;
 
 
 	
@@ -103,12 +104,12 @@ public class LikeEntity extends BaseModel {
 		this.userId = userId;
 		notifyChange("UserId", userId);
 	}
-	public JomleEntity getRelaedJomle() {
-		return RelaedJomle;
+	public JomleEntity getRelatedJomle() {
+		return RelatedJomle;
 	}
-	public void setRelaedJomle(JomleEntity RelaedJomle) {
-		this.RelaedJomle = RelaedJomle;
-		notifyChange("RelaedJomle", RelaedJomle);
+	public void setRelatedJomle(JomleEntity RelatedJomle) {
+		this.RelatedJomle = RelatedJomle;
+		notifyChange("RelatedJomle", RelatedJomle);
 	}
 
 }

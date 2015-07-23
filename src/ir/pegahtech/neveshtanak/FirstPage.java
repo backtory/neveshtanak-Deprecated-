@@ -69,15 +69,16 @@ public class FirstPage extends ActionBarActivity {
 		List<Fragment> fragments = new ArrayList<Fragment>();
 		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_CreationDate,
 				false));
-		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_likesCount,
+		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_likeCount,
 				false));
-		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_likesCount,
+		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_likeCount,
 				false));
 		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_CreationDate,
 				false));
 		adapter = new MyPagerAdapter(getSupportFragmentManager(), fragments);
 		pager.setAdapter(adapter);
 		tabs.setViewPager(pager);
+		pager.setCurrentItem(3);
 	}
 
 	public class MyPagerAdapter extends FragmentPagerAdapter {

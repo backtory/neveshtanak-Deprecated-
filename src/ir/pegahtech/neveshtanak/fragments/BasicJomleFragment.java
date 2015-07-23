@@ -57,7 +57,7 @@ public class BasicJomleFragment extends Fragment implements OnScrollListener {
 	@Override
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		final View v = inflater.inflate(R.layout.jomle_list_fragment,
+		v = inflater.inflate(R.layout.jomle_list_fragment,
 				container, false);
 		firstPage = (FirstPage) getActivity();
 		initPage();
@@ -75,7 +75,9 @@ public class BasicJomleFragment extends Fragment implements OnScrollListener {
 		refreshButton = (Button) v.findViewById(R.id.refresh);
 		listView = (ListView) v.findViewById(R.id.list_view);
 		adapter = new JomleListAdapter(this);
+		listView.setAdapter(adapter);
 		setListeners();
+		loadMore();
 	}
 
 	private void setListeners() {
@@ -101,29 +103,34 @@ public class BasicJomleFragment extends Fragment implements OnScrollListener {
 		switch (mode) {
 		case LOADED:
 			noJomle.setVisibility(View.GONE);
+			refreshButton.setVisibility(View.GONE);
 			loadingError.setVisibility(View.GONE);
 			loadingTv.setVisibility(View.GONE);
 			swipeLayout.setVisibility(View.VISIBLE);
 			break;
 		case NO_JOMLE:
 			noJomle.setVisibility(View.VISIBLE);
+			refreshButton.setVisibility(View.GONE);
 			loadingError.setVisibility(View.GONE);
 			loadingTv.setVisibility(View.GONE);
 			swipeLayout.setVisibility(View.GONE);
 			break;
 		case LOADING_ERROR:
 			noJomle.setVisibility(View.GONE);
+			refreshButton.setVisibility(View.VISIBLE);
 			loadingError.setVisibility(View.VISIBLE);
 			loadingTv.setVisibility(View.GONE);
 			swipeLayout.setVisibility(View.GONE);
 			break;
 		case LOADING:
 			noJomle.setVisibility(View.GONE);
+			refreshButton.setVisibility(View.GONE);
 			loadingError.setVisibility(View.GONE);
 			loadingTv.setVisibility(View.VISIBLE);
 			swipeLayout.setVisibility(View.GONE);
 		default:
 			noJomle.setVisibility(View.GONE);
+			refreshButton.setVisibility(View.GONE);
 			loadingError.setVisibility(View.GONE);
 			loadingTv.setVisibility(View.VISIBLE);
 			swipeLayout.setVisibility(View.GONE);
@@ -154,6 +161,7 @@ public class BasicJomleFragment extends Fragment implements OnScrollListener {
 			@Override
 			public void fail(int resultCode) {
 				UiUtil.getInstance().showInternetProblem(firstPage);
+				System.err.println(resultCode);
 				if (adapter.geJomleEntities().size() == 0)
 					setVisiblity(LOADING_ERROR);
 			}

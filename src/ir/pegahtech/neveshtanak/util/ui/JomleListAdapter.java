@@ -69,7 +69,7 @@ public class JomleListAdapter extends BaseAdapter {
 				.findViewById(R.id.neveshtanaker), date = (TextView) view
 				.findViewById(R.id.likesAndComments);
 		accountImage.setImageDrawable(getNameImage(jomle.getUserName()));
-		likeTv.setText("" + jomle.getLikesCount());
+		likeTv.setText("" + jomle.getLikeCount());
 		date.setText(jomle.getCreationDate().toString());
 		sender.setText(jomle.getUserName());
 		shareBtn.setOnClickListener(new OnClickListener() {
