@@ -4,8 +4,8 @@ import ir.pegahtech.neveshtanak.fragments.BasicJomleFragment;
 import ir.pegahtech.neveshtanak.util.data.DataHandler;
 import ir.pegahtech.neveshtanak.util.ui.PagerSlidingTabStrip;
 import ir.pegahtech.neveshtanak.util.ui.UiUtil;
-import ir.pegahtech.saas.client.neveshtanak.models.jomles.JomleEntity;
-import ir.pegahtech.saas.client.neveshtanak.services.JomlesService;
+import ir.pegahtech.saas.client.Neveshtanak.models.jomles.JomleEntity;
+import ir.pegahtech.saas.client.Neveshtanak.services.JomlesService;
 import ir.pegahtech.saas.client.shared.http.ServiceCallback;
 import ir.pegahtech.saas.client.shared.models.InsertUpdateResponse;
 
@@ -32,15 +32,16 @@ public class FirstPage extends ActionBarActivity {
 	}
 
 	private void sendJomle(String jomle) {
-		if (DataHandler.getInstance(this).getUserName() == null) {
-			showGetUserNameDialog();
-			return;
-		}
+//		if (DataHandler.getInstance(this).getUserName() == null) {
+//			showGetUserNameDialog();
+//			return;
+//		}
 		JomlesService jomlesService = new JomlesService();
 		JomleEntity jomleEntity = new JomleEntity();
 		jomleEntity.setJomle(jomle);
+		jomleEntity.setLikeCount(0);
 		jomleEntity.setUserId(DataHandler.getInstance(this).getUserId());
-		jomleEntity.setUserName(DataHandler.getInstance(this).getUserName());
+		jomleEntity.setUserName("khash" + DataHandler.getInstance(this).getUserName());
 		jomlesService.create(jomleEntity,
 				new ServiceCallback<InsertUpdateResponse>() {
 
@@ -69,9 +70,9 @@ public class FirstPage extends ActionBarActivity {
 		List<Fragment> fragments = new ArrayList<Fragment>();
 		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_CreationDate,
 				false));
-		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_likeCount,
+		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_LikeCount,
 				false));
-		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_likeCount,
+		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_LikeCount,
 				false));
 		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_CreationDate,
 				false));

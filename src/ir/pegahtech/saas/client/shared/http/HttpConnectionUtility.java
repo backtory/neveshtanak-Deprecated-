@@ -417,7 +417,7 @@ public class HttpConnectionUtility {
                     @Override
                     public void onResponse(Response response) throws IOException {
 
-                        if (response.code() < 200 || response.code() > 299) {
+                        if (response.code() < 200 || response.code() > 299){
                             callback.fail(ServiceCallback.RESULT_CODE_GENERAL_FAILURE);
                             return;
                         }

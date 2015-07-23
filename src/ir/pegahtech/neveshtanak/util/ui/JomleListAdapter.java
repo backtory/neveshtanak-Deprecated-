@@ -2,10 +2,11 @@ package ir.pegahtech.neveshtanak.util.ui;
 
 import ir.pegahtech.neveshtanak.R;
 import ir.pegahtech.neveshtanak.util.data.DataHandler;
-import ir.pegahtech.saas.client.neveshtanak.models.jomles.JomleEntity;
-import ir.pegahtech.saas.client.neveshtanak.models.likes.LikeEntity;
-import ir.pegahtech.saas.client.neveshtanak.models.likes.LikeListResponse;
-import ir.pegahtech.saas.client.neveshtanak.services.LikesService;
+import ir.pegahtech.saas.client.Neveshtanak.models.jomles.JomleEntity;
+import ir.pegahtech.saas.client.Neveshtanak.models.likes.LikeEntity;
+import ir.pegahtech.saas.client.Neveshtanak.models.likes.LikeListResponse;
+import ir.pegahtech.saas.client.Neveshtanak.services.JomlesService;
+import ir.pegahtech.saas.client.Neveshtanak.services.LikesService;
 import ir.pegahtech.saas.client.shared.http.ServiceCallback;
 import ir.pegahtech.saas.client.shared.models.Exp;
 import ir.pegahtech.saas.client.shared.models.InsertUpdateResponse;
@@ -67,7 +68,9 @@ public class JomleListAdapter extends BaseAdapter {
 		TextView likeTv = (TextView) view
 				.findViewById(R.id.neveshtanak_like_count), sender = (TextView) view
 				.findViewById(R.id.neveshtanaker), date = (TextView) view
-				.findViewById(R.id.likesAndComments);
+				.findViewById(R.id.likesAndComments), neveshtanak = (TextView)view
+				.findViewById(R.id.neveshtanak);
+		neveshtanak.setText(jomle.getJomle());
 		accountImage.setImageDrawable(getNameImage(jomle.getUserName()));
 		likeTv.setText("" + jomle.getLikeCount());
 		date.setText(jomle.getCreationDate().toString());
@@ -89,9 +92,9 @@ public class JomleListAdapter extends BaseAdapter {
 			public void onClick(View v) {
 				ListRequest request = new ListRequest(0, 1, false, true,
 						new QueryObject()).and(
-						Exp.equalsTo(LikeEntity.COLUMN_userId, DataHandler
+						Exp.equalsTo(LikeEntity.COLUMN_UserId, DataHandler
 								.getInstance(context).getUserId())).and(
-						Exp.equalsTo(LikeEntity.COLUMN_jomle, jomle.getGuid()
+						Exp.equalsTo(LikeEntity.COLUMN_Jomle, jomle.getGuid()
 								.toString()));
 				final LikesService likesService = new LikesService();
 				likesService.list(request,
@@ -106,6 +109,22 @@ public class JomleListAdapter extends BaseAdapter {
 													context);
 									return;
 								}
+								jomle.setLikeCount(jomle.getLikeCount() + 1);
+								JomlesService jomlesService = new JomlesService();
+								jomlesService
+										.update(jomle,
+												new ServiceCallback<InsertUpdateResponse>() {
+
+													@Override
+													public void success(
+															InsertUpdateResponse result) {
+													}
+
+													@Override
+													public void fail(
+															int resultCode) {
+													}
+												});
 								LikeEntity likeEntity = new LikeEntity();
 								likeEntity.setJomle(jomle.getGuid());
 								likeEntity.setUserId(DataHandler.getInstance(
@@ -144,7 +163,7 @@ public class JomleListAdapter extends BaseAdapter {
 	}
 
 	private Drawable getNameImage(String userName) {
-		return context.getDrawable(R.drawable.ic_action_send_sms);
+		return context.getResources().getDrawable(R.drawable.ic_action_send_sms);
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package ir.pegahtech.saas.client.neveshtanak;
+package ir.pegahtech.saas.client.Neveshtanak;
 
 import com.squareup.okhttp.Cache;
 import com.squareup.okhttp.OkHttpClient;
@@ -16,7 +16,7 @@ import java.util.UUID;
 
 public class NeveshtanakConfiguration implements SaaSConfiguration {
 	public static final String serviceRootUrl = "http://185.4.29.138:48000/ContentServices_WAR/";
-	public static final String fileTableId = "c6837b76-9f79-4249-b278-5f0ed6c8bc4c";
+	public static final String fileTableId = "3d5ca9db-2de6-4a86-ad9e-4ea2f82aece4";
 
 	private static NeveshtanakConfiguration _instance = new NeveshtanakConfiguration();
 	private NeveshtanakConfiguration() { }
@@ -60,7 +60,7 @@ public class NeveshtanakConfiguration implements SaaSConfiguration {
 
     @Override
     public UUID getSchemaId() {
-        return UUID.fromString("0fb9e8a8-2563-41c6-86c8-136b6ac52cc2");
+        return UUID.fromString("5a0ddb42-c081-4f70-a83a-0e4314da452e");
     }
     @Override
     public String getLoggedInUsername() {

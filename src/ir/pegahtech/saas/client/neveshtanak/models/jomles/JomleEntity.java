@@ -1,4 +1,4 @@
-package ir.pegahtech.saas.client.neveshtanak.models.jomles;
+package ir.pegahtech.saas.client.Neveshtanak.models.jomles;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Date;
 
 import ir.pegahtech.saas.client.shared.models.*;
-import ir.pegahtech.saas.client.neveshtanak.models.mobileusers.*;
-import ir.pegahtech.saas.client.neveshtanak.models.likes.*;
-import ir.pegahtech.saas.client.neveshtanak.models.jomles.*;
+import ir.pegahtech.saas.client.Neveshtanak.models.mobileusers.*;
+import ir.pegahtech.saas.client.Neveshtanak.models.likes.*;
+import ir.pegahtech.saas.client.Neveshtanak.models.jomles.*;
 
 
 import ir.pegahtech.saas.client.shared.enums.*;
@@ -21,12 +21,13 @@ public class JomleEntity extends BaseModel {
 	public static final String COLUMN_IsDeleted = "IsDeleted";
 	public static final String COLUMN_LastModifiedDate = "LastModifiedDate";
 	public static final String COLUMN_Owner_ID = "Owner_ID";
-	public static final String COLUMN_jomle = "jomle";
-	public static final String COLUMN_likeCount = "likeCount";
-	public static final String COLUMN_userId = "userId";
-	public static final String COLUMN_userName = "userName";
+	public static final String COLUMN_Jomle = "Jomle";
+	public static final String COLUMN_LikeCount = "LikeCount";
+	public static final String COLUMN_UserId = "UserId";
+	public static final String COLUMN_UserName = "UserName";
 
 
+	public static final String INCLUDE_Likes = "Likes";
 
 
 	@SerializedName("Guid")
@@ -44,17 +45,20 @@ public class JomleEntity extends BaseModel {
 	@SerializedName("Owner_ID")
 	private String Owner_ID;
 
-	@SerializedName("jomle")
-	private String jomle;
+	@SerializedName("Jomle")
+	private String Jomle;
 
-	@SerializedName("likeCount")
-	private Integer likeCount;
+	@SerializedName("LikeCount")
+	private Integer LikeCount;
 
-	@SerializedName("userId")
-	private String userId;
+	@SerializedName("UserId")
+	private String UserId;
 
-	@SerializedName("userName")
-	private String userName;
+	@SerializedName("UserName")
+	private String UserName;
+
+	@SerializedName("Likes")
+	private List<LikeEntity> Likes;
 
 
 	
@@ -95,32 +99,39 @@ public class JomleEntity extends BaseModel {
 		notifyChange("Owner_ID", Owner_ID);
 	}
 	public String getJomle() {
-		return jomle;
+		return Jomle;
 	}
-	public void setJomle(String jomle) {
-		this.jomle = jomle;
-		notifyChange("Jomle", jomle);
+	public void setJomle(String Jomle) {
+		this.Jomle = Jomle;
+		notifyChange("Jomle", Jomle);
 	}
 	public Integer getLikeCount() {
-		return likeCount;
+		return LikeCount;
 	}
-	public void setLikeCount(Integer likeCount) {
-		this.likeCount = likeCount;
-		notifyChange("LikeCount", likeCount);
+	public void setLikeCount(Integer LikeCount) {
+		this.LikeCount = LikeCount;
+		notifyChange("LikeCount", LikeCount);
 	}
 	public String getUserId() {
-		return userId;
+		return UserId;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-		notifyChange("UserId", userId);
+	public void setUserId(String UserId) {
+		this.UserId = UserId;
+		notifyChange("UserId", UserId);
 	}
 	public String getUserName() {
-		return userName;
+		return UserName;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-		notifyChange("UserName", userName);
+	public void setUserName(String UserName) {
+		this.UserName = UserName;
+		notifyChange("UserName", UserName);
+	}
+	public List<LikeEntity> getLikes() {
+		return Likes;
+	}
+	public void setLikes(List<LikeEntity> Likes) {
+		this.Likes = Likes;
+		notifyChange("Likes", Likes);
 	}
 
 }

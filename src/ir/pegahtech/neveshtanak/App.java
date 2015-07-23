@@ -4,7 +4,7 @@ import ir.pegahtech.neveshtanak.styledview.StyledButton;
 import ir.pegahtech.neveshtanak.styledview.StyledEditText;
 import ir.pegahtech.neveshtanak.styledview.StyledTextView;
 import ir.pegahtech.neveshtanak.util.data.DataHandler;
-import ir.pegahtech.saas.client.neveshtanak.NeveshtanakConfiguration;
+import ir.pegahtech.saas.client.Neveshtanak.NeveshtanakConfiguration;
 import ir.pegahtech.saas.client.shared.conf.SaaSDataProvider;
 
 import java.io.BufferedReader;

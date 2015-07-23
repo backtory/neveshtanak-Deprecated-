@@ -1,5 +1,7 @@
 package ir.pegahtech.saas.client.shared.models;
 
+import java.util.logging.Filter;
+
 import ir.pegahtech.saas.client.shared.builder.Operator;
 
 /**
