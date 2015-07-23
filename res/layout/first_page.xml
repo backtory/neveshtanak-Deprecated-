@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="#eee" >
 
-    <com.meyar.instaboard.util.ui.PagerSlidingTabStrip
+    <ir.pegahtech.neveshtanak.util.ui.PagerSlidingTabStrip
         android:id="@+id/tab_strip"
         android:layout_width="match_parent"
         android:layout_height="@dimen/action_bar_height"
