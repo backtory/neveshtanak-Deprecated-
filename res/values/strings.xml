@@ -20,6 +20,13 @@
     <string name="suggestion_view">مشاهده پروفایل طرف</string>
     <string name="suggestion_message">با مشاهده پروفایل طرف نوشتنک های او را ببینید!</string>
     <string name="connect_to_internet">وصلش کن به اینترنت</string>
-    
+    <!-- time strings -->
+    <string name="time_afew_seconds_ago">لحظاتی پیش</string>
+    <string name="time_min_ago">دقیقه پیش</string>
+    <string name="time_hours_ago">ساعت پیش</string>
+    <string name="time_days_ago">روز پیش</string>
+    <string name="time_months_ago">ماه پیش</string>
+    <string name="time_years_ago">سال پیش</string>
+    <string name="time_weeks_ago">هفته پیش</string>
 
 </resources>
