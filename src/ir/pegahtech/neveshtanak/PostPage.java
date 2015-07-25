@@ -88,7 +88,7 @@ public class PostPage extends ActionBarActivity {
 
 	private void showGetUserNameDialog() {
 		// TODO Auto-generated method stub
-		String name = "khashi";
-		DataHandler.getInstance(this).saveUserName(name);
+//		String name = "khashi";
+//		DataHandler.getInstance(this).saveUserName(name);
 	}
 }
