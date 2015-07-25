@@ -2,6 +2,7 @@ package ir.pegahtech.neveshtanak.util.ui;
 
 import ir.pegahtech.neveshtanak.DateModifier;
 import ir.pegahtech.neveshtanak.R;
+import ir.pegahtech.neveshtanak.UsersJomlesPage;
 import ir.pegahtech.neveshtanak.util.data.DataHandler;
 import ir.pegahtech.saas.client.Neveshtanak.models.jomlelikes.JomleLikeEntity;
 import ir.pegahtech.saas.client.Neveshtanak.models.jomlelikes.JomleLikeListResponse;
@@ -77,6 +78,8 @@ public class JomleListAdapter extends BaseAdapter {
 		date.setText(new DateModifier(context).getStringTime(jomle
 				.getCreationDate()));
 		sender.setText(jomle.getUserName());
+		likeBtn.setImageResource(DataHandler.getInstance(context).isLiked(
+				jomle.getGuid()) ? R.drawable.liked : R.drawable.new_like);
 		shareBtn.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -92,12 +95,17 @@ public class JomleListAdapter extends BaseAdapter {
 
 			@Override
 			public void onClick(View v) {
+				if (DataHandler.getInstance(context).isLiked(jomle.getGuid())) {
+					UiUtil.getInstance().toast(
+							context.getString(R.string.liked_before), context);
+					return;
+				}
 				ListRequest request = new ListRequest(0, 1, false, true,
 						new QueryObject()).and(
 						Exp.equalsTo(JomleLikeEntity.COLUMN_UserId, DataHandler
 								.getInstance(context).getUserId())).and(
-						Exp.equalsTo(JomleLikeEntity.COLUMN_Jomle, jomle.getGuid()
-								.toString()));
+						Exp.equalsTo(JomleLikeEntity.COLUMN_Jomle, jomle
+								.getGuid().toString()));
 				final JomleLikesService likesService = new JomleLikesService();
 				likesService.list(request,
 						new ServiceCallback<JomleLikeListResponse>() {
@@ -142,6 +150,12 @@ public class JomleListAdapter extends BaseAdapter {
 																.toast(context
 																		.getString(R.string.liked),
 																		context);
+														DataHandler
+																.getInstance(
+																		context)
+																.like(jomle
+																		.getGuid());
+														likeBtn.setImageResource(R.drawable.liked);
 													}
 
 													@Override
@@ -160,6 +174,15 @@ public class JomleListAdapter extends BaseAdapter {
 										context);
 							}
 						});
+			}
+		});
+		accountImage.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, UsersJomlesPage.class);
+				intent.putExtra("user-id", jomle.getUserId());
+				context.startActivity(intent);
 			}
 		});
 	}

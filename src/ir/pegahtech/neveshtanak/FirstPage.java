@@ -1,6 +1,7 @@
 package ir.pegahtech.neveshtanak;
 
 import ir.pegahtech.neveshtanak.fragments.BasicJomleFragment;
+import ir.pegahtech.neveshtanak.fragments.LikedJomlesFragment;
 import ir.pegahtech.neveshtanak.util.data.DataHandler;
 import ir.pegahtech.neveshtanak.util.ui.PagerSlidingTabStrip;
 import ir.pegahtech.neveshtanak.util.ui.UiUtil;
@@ -68,10 +69,7 @@ public class FirstPage extends ActionBarActivity {
 		tabs = (PagerSlidingTabStrip) findViewById(R.id.tab_strip);
 		pager = (ViewPager) findViewById(R.id.viewpager);
 		List<Fragment> fragments = new ArrayList<Fragment>();
-		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_CreationDate,
-				false));
-		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_LikeCount,
-				false));
+		fragments.add(new LikedJomlesFragment());
 		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_CreationDate,
 				false));
 		fragments.add(new BasicJomleFragment(JomleEntity.COLUMN_LikeCount,
@@ -79,7 +77,7 @@ public class FirstPage extends ActionBarActivity {
 		adapter = new MyPagerAdapter(getSupportFragmentManager(), fragments);
 		pager.setAdapter(adapter);
 		tabs.setViewPager(pager);
-		pager.setCurrentItem(3);
+		pager.setCurrentItem(2);
 	}
 
 	public class MyPagerAdapter extends FragmentPagerAdapter {
@@ -96,14 +94,12 @@ public class FirstPage extends ActionBarActivity {
 
 		@Override
 		public CharSequence getPageTitle(int position) {
-			if (position == 3)
+			if (position == 2)
 				return getString(R.string.best);
-			else if (position == 2)
-				return getString(R.string.my_wall);
 			else if (position == 1)
-				return getString(R.string.favorite);
+				return getString(R.string.my_wall);
 			else
-				return getString(R.string.others);
+				return getString(R.string.favorite);
 		}
 
 		@Override

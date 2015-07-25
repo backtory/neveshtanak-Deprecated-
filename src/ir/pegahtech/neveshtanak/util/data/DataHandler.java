@@ -51,4 +51,34 @@ public class DataHandler {
 	public void remove(String key){
 		editor.remove(key);
 	}
+	
+	public void like(String id){
+		id = id.toLowerCase();
+		String likedString = sp.getString("likes", "");
+		String[] strings = likedString.split(" ");
+		for(String likeId : strings){
+			if(likeId.equals(id)){
+				return;
+			}
+		}
+		if(likedString.equals("")){
+			likedString = id;
+		}
+		else{
+			likedString += " " + id;
+		}
+		editor.putString("likes", likedString);
+		editor.commit();
+	}
+	
+	public boolean isLiked(String id){
+		id = id.toLowerCase();
+		String likedString = sp.getString("likes", "");
+		String[] strings = likedString.split(" ");
+		for(String likedId: strings){
+			if(likedId.equals(id))
+				return true;
+		}
+		return false;
+	}
 }
