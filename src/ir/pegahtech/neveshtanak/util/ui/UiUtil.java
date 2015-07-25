@@ -2,6 +2,7 @@ package ir.pegahtech.neveshtanak.util.ui;
 
 import ir.pegahtech.neveshtanak.R;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.widget.Toast;
 
@@ -34,5 +35,9 @@ public class UiUtil {
 		}, TOAST_DUR);
 		Toast.makeText(context, s,
 				Toast.LENGTH_LONG).show();
+	}
+	
+	public Drawable getUserNameAsDrawable(String userName, Context context){
+		return context.getResources().getDrawable(R.drawable.ic_action_send_sms);
 	}
 }

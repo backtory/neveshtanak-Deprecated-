@@ -2,13 +2,8 @@ package ir.pegahtech.neveshtanak;
 
 import ir.pegahtech.neveshtanak.fragments.BasicJomleFragment;
 import ir.pegahtech.neveshtanak.fragments.LikedJomlesFragment;
-import ir.pegahtech.neveshtanak.util.data.DataHandler;
 import ir.pegahtech.neveshtanak.util.ui.PagerSlidingTabStrip;
-import ir.pegahtech.neveshtanak.util.ui.UiUtil;
 import ir.pegahtech.saas.client.Neveshtanak.models.jomles.JomleEntity;
-import ir.pegahtech.saas.client.Neveshtanak.services.JomlesService;
-import ir.pegahtech.saas.client.shared.http.ServiceCallback;
-import ir.pegahtech.saas.client.shared.models.InsertUpdateResponse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,39 +25,6 @@ public class FirstPage extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.first_page);
 		initViews();
-	}
-
-	private void sendJomle(String jomle) {
-//		if (DataHandler.getInstance(this).getUserName() == null) {
-//			showGetUserNameDialog();
-//			return;
-//		}
-		JomlesService jomlesService = new JomlesService();
-		JomleEntity jomleEntity = new JomleEntity();
-		jomleEntity.setJomle(jomle);
-		jomleEntity.setLikeCount(0);
-		jomleEntity.setUserId(DataHandler.getInstance(this).getUserId());
-		jomleEntity.setUserName("khash" + DataHandler.getInstance(this).getUserName());
-		jomlesService.create(jomleEntity,
-				new ServiceCallback<InsertUpdateResponse>() {
-
-					@Override
-					public void success(InsertUpdateResponse result) {
-						UiUtil.getInstance().toast(getString(R.string.sent),
-								FirstPage.this);
-					}
-
-					@Override
-					public void fail(int resultCode) {
-						UiUtil.getInstance()
-								.showInternetProblem(FirstPage.this);
-					}
-				});
-	}
-
-	private void showGetUserNameDialog() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	private void initViews() {

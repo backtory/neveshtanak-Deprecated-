@@ -73,7 +73,7 @@ public class JomleListAdapter extends BaseAdapter {
 				.findViewById(R.id.likesAndComments), neveshtanak = (TextView) view
 				.findViewById(R.id.neveshtanak);
 		neveshtanak.setText(jomle.getJomle());
-		accountImage.setImageDrawable(getNameImage(jomle.getUserName()));
+		accountImage.setImageDrawable(UiUtil.getInstance().getUserNameAsDrawable(jomle.getUserName(), context));
 		likeTv.setText("" + jomle.getLikeCount());
 		date.setText(new DateModifier(context).getStringTime(jomle
 				.getCreationDate()));
@@ -177,7 +177,16 @@ public class JomleListAdapter extends BaseAdapter {
 			}
 		});
 		accountImage.setOnClickListener(new OnClickListener() {
-			
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, UsersJomlesPage.class);
+				intent.putExtra("user-id", jomle.getUserId());
+				context.startActivity(intent);
+			}
+		});
+		sender.setOnClickListener(new OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(context, UsersJomlesPage.class);

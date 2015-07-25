@@ -31,6 +31,10 @@
             android:name="ir.pegahtech.neveshtanak.UsersJomlesPage"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="ir.pegahtech.neveshtanak.PostPage"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
