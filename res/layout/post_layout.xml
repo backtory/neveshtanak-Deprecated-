@@ -91,4 +91,14 @@
         android:layout_height="1.0dip"
         android:background="@drawable/list_rule" />
 
+    <ir.pegahtech.neveshtanak.styledview.StyledButton
+        android:id="@+id/btn_send"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="8dip"
+        android:layout_marginRight="8dip"
+        android:background="@drawable/blue_button_selector"
+        android:text="@string/send" />
+
 </RelativeLayout>

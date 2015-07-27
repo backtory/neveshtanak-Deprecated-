@@ -8,6 +8,10 @@
     <string name="favorite">علایق</string>
     <string name="others">بقیه</string>
     <string name="sent">ارسال شد</string>
+    <string name="send">ارسال</string>
+    <string name="select_username">ابتدا بایستی یک یوزرنیم برای خود انتخاب کنید</string>
+    <string name="username_hint_persian">نام کاربری فارسی</string>
+    <string name="username_hint_english">نام کاربری لاتین</string>
     <string name="liked">لایک شد</string>
     <string name="dot">.</string>
     <string name="liked_before">قبلا اینو لایک کردی;)</string>
@@ -29,5 +33,98 @@
     <string name="time_months_ago">ماه پیش</string>
     <string name="time_years_ago">سال پیش</string>
     <string name="time_weeks_ago">هفته پیش</string>
+    <string name="alef">الف</string>
+    <string name="alef2">آ</string>
+    <string name="alef_main">ا</string>
+    <string name="be">ب</string>
+    <string name="pe">پ</string>
+    <string name="te">ت</string>
+    <string name="se">ث</string>
+    <string name="jim">ج</string>
+    <string name="che">چ</string>
+    <string name="he">ح</string>
+    <string name="khe">خ</string>
+    <string name="dal">د</string>
+    <string name="zal">ذ</string>
+    <string name="re">ر</string>
+    <string name="ze">ز</string>
+    <string name="zhe">ژ</string>
+    <string name="sin">س</string>
+    <string name="shin">ش</string>
+    <string name="sad">ص</string>
+    <string name="zad">ض</string>
+    <string name="ta">ط</string>
+    <string name="za">ظ</string>
+    <string name="ein">ع</string>
+    <string name="ghain">غ</string>
+    <string name="fe">ف</string>
+    <string name="ghaf">ق</string>
+    <string name="kaf">ک</string>
+    <string name="kaf_arabi">ك</string>
+    <string name="gaf">گ</string>
+    <string name="lam">ل</string>
+    <string name="mim">م</string>
+    <string name="noon">ن</string>
+    <string name="vav">و</string>
+    <string name="he_docheshm">ه</string>
+    <string name="ye">ی</string>
+    <string name="ye_arabi">ي</string>
+    <string name="yek">١</string>
+    <string name="doo">٢</string>
+    <string name="seh">٣</string>
+    <string name="chahar">٤</string>
+    <string name="panj">٥</string>
+    <string name="shesh">٦</string>
+    <string name="haft">٧</string>
+    <string name="hasht">٨</string>
+    <string name="noh">٩</string>
+    <string name="sefr">٠</string>
+
+    <string-array name="numbers">
+        <item>@string/sefr</item>
+        <item>@string/yek</item>
+        <item>@string/doo</item>
+        <item>@string/seh</item>
+        <item>@string/chahar</item>
+        <item>@string/panj</item>
+        <item>@string/shesh</item>
+        <item>@string/haft</item>
+        <item>@string/hasht</item>
+        <item>@string/noh</item>
+    </string-array>
+    <string-array name="alphabet">
+        <item>@string/alef</item>
+        <item>@string/be</item>
+        <item>@string/pe</item>
+        <item>@string/te</item>
+        <item>@string/se</item>
+        <item>@string/jim</item>
+        <item>@string/che</item>
+        <item>@string/he</item>
+        <item>@string/khe</item>
+        <item>@string/dal</item>
+        <item>@string/zal</item>
+        <item>@string/re</item>
+        <item>@string/ze</item>
+        <item>@string/zhe</item>
+        <item>@string/sin</item>
+        <item>@string/shin</item>
+        <item>@string/sad</item>
+        <item>@string/zad</item>
+        <item>@string/ta</item>
+        <item>@string/za</item>
+        <item>@string/ein</item>
+        <item>@string/ghain</item>
+        <item>@string/fe</item>
+        <item>@string/ghaf</item>
+        <item>@string/kaf</item>
+        <item>@string/gaf</item>
+        <item>@string/lam</item>
+        <item>@string/mim</item>
+        <item>@string/noon</item>
+        <item>@string/vav</item>
+        <item>@string/he_docheshm</item>
+        <item>@string/ye</item>
+    </string-array>
 
 </resources>

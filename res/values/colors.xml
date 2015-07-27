@@ -53,6 +53,12 @@
     <color name="background_tab_pressed">#6633B5E5</color>
 
     <color name="blue_main">#0099ff</color>
+    <color name="dark_blue_main">#00aaff</color>
     <color name="upload_image">#ffffff</color>    
+    <color name="neveshtanak_edit_text">#ff282828</color> 
+    <color name="neveshtanak_divider">#ffc8c8c8</color> 
+    <color name="neveshtanak_edit_text_disabled">#ff989898</color> 
+    
+    
 
 </resources>
