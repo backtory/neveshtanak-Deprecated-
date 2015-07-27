@@ -1,8 +1,8 @@
 package ir.pegahtech.neveshtanak.util.ui;
 
-import ir.pegahtech.neveshtanak.DateModifier;
 import ir.pegahtech.neveshtanak.R;
 import ir.pegahtech.neveshtanak.UsersJomlesPage;
+import ir.pegahtech.neveshtanak.util.DateModifier;
 import ir.pegahtech.neveshtanak.util.data.DataHandler;
 import ir.pegahtech.saas.client.Neveshtanak.models.jomlelikes.JomleLikeEntity;
 import ir.pegahtech.saas.client.Neveshtanak.models.jomlelikes.JomleLikeListResponse;
@@ -67,7 +67,7 @@ public class JomleListAdapter extends BaseAdapter {
 		final ImageButton likeBtn = (ImageButton) view
 				.findViewById(R.id.neveshtanak_like_pic), shareBtn = (ImageButton) view
 				.findViewById(R.id.neveshtanak_share_pic);
-		TextView likeTv = (TextView) view
+		final TextView likeTv = (TextView) view
 				.findViewById(R.id.neveshtanak_like_count), sender = (TextView) view
 				.findViewById(R.id.neveshtanaker), date = (TextView) view
 				.findViewById(R.id.likesAndComments), neveshtanak = (TextView) view
@@ -155,6 +155,7 @@ public class JomleListAdapter extends BaseAdapter {
 																		context)
 																.like(jomle
 																		.getGuid());
+														likeTv.setText("" + jomle.getLikeCount());
 														likeBtn.setImageResource(R.drawable.liked);
 													}
 
@@ -182,6 +183,7 @@ public class JomleListAdapter extends BaseAdapter {
 			public void onClick(View v) {
 				Intent intent = new Intent(context, UsersJomlesPage.class);
 				intent.putExtra("user-id", jomle.getUserId());
+				intent.putExtra("user-name", jomle.getUserName());
 				context.startActivity(intent);
 			}
 		});

@@ -1,13 +1,13 @@
 package ir.pegahtech.neveshtanak;
 
-import ir.pegahtech.neveshtanak.styledview.textdrawable.TextDrawable;
+import ir.pegahtech.neveshtanak.styledview.StyledDialog;
 import ir.pegahtech.neveshtanak.util.data.DataHandler;
 import ir.pegahtech.neveshtanak.util.ui.UiUtil;
 import ir.pegahtech.saas.client.Neveshtanak.models.jomles.JomleEntity;
 import ir.pegahtech.saas.client.Neveshtanak.services.JomlesService;
 import ir.pegahtech.saas.client.shared.http.ServiceCallback;
 import ir.pegahtech.saas.client.shared.models.InsertUpdateResponse;
-import android.graphics.Color;
+import android.app.Dialog;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -80,13 +80,6 @@ public class PostPage extends ActionBarActivity {
 		});
 	}
 
-	private void setImage(String str) {
-		TextDrawable drawable = TextDrawable.builder()
-				.buildRect(str, Color.RED);
-
-		accountImage.setImageDrawable(drawable);
-	}
-
 	private void sendJomle(String jomle) {
 		if (DataHandler.getInstance(this).getUserName() == null) {
 			showGetUserNameDialog();
@@ -105,6 +98,7 @@ public class PostPage extends ActionBarActivity {
 					public void success(InsertUpdateResponse result) {
 						UiUtil.getInstance().toast(getString(R.string.sent),
 								PostPage.this);
+						finish();
 					}
 
 					@Override
@@ -115,8 +109,31 @@ public class PostPage extends ActionBarActivity {
 	}
 
 	private void showGetUserNameDialog() {
-		// TODO Auto-generated method stub
-		// String name = "khashi";
-		// DataHandler.getInstance(this).saveUserName(name);
+		final Dialog signUpDialog = new StyledDialog(this);
+		signUpDialog.setContentView(R.layout.dialog_signup);
+		Button cancelBtn = (Button) signUpDialog.findViewById(R.id.btn_cancel), okBtn = (Button) signUpDialog
+				.findViewById(R.id.btn_ok);
+		final EditText name = (EditText) signUpDialog
+				.findViewById(R.id.lbl_dialog_text_camera);
+		cancelBtn.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				signUpDialog.dismiss();
+			}
+		});
+		okBtn.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				DataHandler.getInstance(PostPage.this).saveUserName(
+						name.getText().toString());
+				accountImage.setImageDrawable(UiUtil.getInstance()
+						.getUserNameAsDrawable(name.getText().toString(),
+								PostPage.this));
+				signUpDialog.dismiss();
+			}
+		});
+		signUpDialog.show();
 	}
 }

@@ -1,8 +1,9 @@
-package ir.pegahtech.neveshtanak;
+package ir.pegahtech.neveshtanak.util;
 
 import java.util.Calendar;
 import java.util.Date;
 import ir.pegahtech.neveshtanak.R;
+import ir.pegahtech.neveshtanak.R.string;
 
 
 import android.content.Context;

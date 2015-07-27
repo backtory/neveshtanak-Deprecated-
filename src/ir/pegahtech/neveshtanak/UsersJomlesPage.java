@@ -10,7 +10,8 @@ public class UsersJomlesPage extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.user_jomles_page);
 		String userId = getIntent().getStringExtra("user-id");
+		String userName = getIntent().getStringExtra("user-name");
 		getSupportFragmentManager().beginTransaction()
-				.add(R.id.main, new UserJomlesFragment(userId)).commit();
+				.add(R.id.main, new UserJomlesFragment(userId, userName)).commit();
 	}
 }

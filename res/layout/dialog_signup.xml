@@ -49,6 +49,7 @@
                 android:layout_gravity="right|center_vertical"
                 android:gravity="center|right"
                 android:padding="8.0dip"
+                android:maxLength="50"
                 android:hint="@string/username_hint_persian"
                 android:textColor="@color/neveshtanak_edit_text"
                 android:textSize="16.0sp" />
