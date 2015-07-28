@@ -35,11 +35,13 @@ public class JomleListAdapter extends BaseAdapter {
 	private Fragment container;
 	private Context context;
 	private List<JomleEntity> jomleList;
+	private boolean openNewUserPage;
 
-	public JomleListAdapter(Fragment container) {
+	public JomleListAdapter(Fragment container, boolean openNewUserPage) {
 		jomleList = new ArrayList<JomleEntity>();
 		context = container.getActivity();
 		this.container = container;
+		this.openNewUserPage = openNewUserPage;
 	}
 
 	public List<JomleEntity> geJomleEntities() {
@@ -185,6 +187,8 @@ public class JomleListAdapter extends BaseAdapter {
 
 			@Override
 			public void onClick(View v) {
+				if(!openNewUserPage)
+					return;
 				Intent intent = new Intent(context, UsersJomlesPage.class);
 				intent.putExtra("user-id", jomle.getUserId());
 				intent.putExtra("user-name", jomle.getUserName());

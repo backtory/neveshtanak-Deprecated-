@@ -76,7 +76,10 @@ public class BasicJomleFragment extends Fragment implements OnScrollListener {
 		loadingError = (TextView) v.findViewById(R.id.loading_error);
 		refreshButton = (Button) v.findViewById(R.id.refresh);
 		listView = (ListView) v.findViewById(R.id.list_view);
-		adapter = new JomleListAdapter(this);
+		if(this instanceof UserJomlesFragment)
+			adapter = new JomleListAdapter(this, false);
+		else
+			adapter = new JomleListAdapter(this, true);
 		listView.setAdapter(adapter);
 		setListeners();
 		loadMore();
