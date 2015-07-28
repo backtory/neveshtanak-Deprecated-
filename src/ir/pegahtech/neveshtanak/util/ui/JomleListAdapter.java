@@ -21,6 +21,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -77,6 +78,8 @@ public class JomleListAdapter extends BaseAdapter {
 				.findViewById(R.id.likesAndComments), neveshtanak = (TextView) view
 				.findViewById(R.id.neveshtanak);
 		neveshtanak.setText(jomle.getJomle());
+		neveshtanak.setTypeface(Typeface.createFromAsset(context.getAssets(), "Yekan.ttf"));
+		neveshtanak.setTextSize(16);
 		accountImage.setImageDrawable(UiUtil.getInstance()
 				.getUserNameAsDrawable(jomle.getUserName(), context));
 		likeTv.setText("" + jomle.getLikeCount());
