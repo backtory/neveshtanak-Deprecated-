@@ -115,6 +115,15 @@ public class PostPage extends ActionBarActivity {
 				.findViewById(R.id.btn_ok);
 		final EditText name = (EditText) signUpDialog
 				.findViewById(R.id.lbl_dialog_text_camera);
+		ImageView image = (ImageView)signUpDialog.findViewById(R.id.image);
+		image.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				App.toast(getString(R.string.soon), true);
+			}
+		});
+		
 		cancelBtn.setOnClickListener(new OnClickListener() {
 
 			@Override

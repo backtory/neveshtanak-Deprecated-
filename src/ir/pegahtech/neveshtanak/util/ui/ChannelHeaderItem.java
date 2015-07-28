@@ -46,7 +46,7 @@ public class ChannelHeaderItem {
 		LayoutInflater inflater = (LayoutInflater) ac
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		v = new View(ac);
-		v = inflater.inflate(R.layout.channel_header, null);
+		v = inflater.inflate(R.layout.profile_header, null);
 		nameImage = (ImageView)v.findViewById(R.id.name_image);
 		name = (TextView)v.findViewById(R.id.txt_title);
 		jomlesCount = (TextView)v.findViewById(R.id.txt_jomles);

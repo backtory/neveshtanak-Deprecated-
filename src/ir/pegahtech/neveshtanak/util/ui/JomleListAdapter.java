@@ -1,5 +1,6 @@
 package ir.pegahtech.neveshtanak.util.ui;
 
+import ir.pegahtech.neveshtanak.App;
 import ir.pegahtech.neveshtanak.R;
 import ir.pegahtech.neveshtanak.UsersJomlesPage;
 import ir.pegahtech.neveshtanak.util.DateModifier;
@@ -20,7 +21,6 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,6 +64,8 @@ public class JomleListAdapter extends BaseAdapter {
 	private void setItemView(View view, final JomleEntity jomle) {
 		ImageView accountImage = (ImageView) view
 				.findViewById(R.id.account_image);
+		ImageView commentImage = (ImageView) view
+				.findViewById(R.id.neveshtanak_comment_pic);
 		final ImageButton likeBtn = (ImageButton) view
 				.findViewById(R.id.neveshtanak_like_pic), shareBtn = (ImageButton) view
 				.findViewById(R.id.neveshtanak_share_pic);
@@ -73,7 +75,8 @@ public class JomleListAdapter extends BaseAdapter {
 				.findViewById(R.id.likesAndComments), neveshtanak = (TextView) view
 				.findViewById(R.id.neveshtanak);
 		neveshtanak.setText(jomle.getJomle());
-		accountImage.setImageDrawable(UiUtil.getInstance().getUserNameAsDrawable(jomle.getUserName(), context));
+		accountImage.setImageDrawable(UiUtil.getInstance()
+				.getUserNameAsDrawable(jomle.getUserName(), context));
 		likeTv.setText("" + jomle.getLikeCount());
 		date.setText(new DateModifier(context).getStringTime(jomle
 				.getCreationDate()));
@@ -155,7 +158,8 @@ public class JomleListAdapter extends BaseAdapter {
 																		context)
 																.like(jomle
 																		.getGuid());
-														likeTv.setText("" + jomle.getLikeCount());
+														likeTv.setText(""
+																+ jomle.getLikeCount());
 														likeBtn.setImageResource(R.drawable.liked);
 													}
 
@@ -196,11 +200,15 @@ public class JomleListAdapter extends BaseAdapter {
 				context.startActivity(intent);
 			}
 		});
-	}
 
-	private Drawable getNameImage(String userName) {
-		return context.getResources()
-				.getDrawable(R.drawable.ic_action_send_sms);
+		commentImage.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				App.toast(v.getContext().getString(R.string.soon), false);
+			}
+		});
+
 	}
 
 	@Override

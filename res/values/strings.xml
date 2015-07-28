@@ -12,6 +12,7 @@
     <string name="select_username">ابتدا بایستی یک یوزرنیم برای خود انتخاب کنید</string>
     <string name="username_hint_persian">نام کاربری فارسی</string>
     <string name="username_hint_english">نام کاربری لاتین</string>
+    <string name="user_bio">یه حرفی در مورد خودت بزن</string>
     <string name="liked">لایک شد</string>
     <string name="dot">.</string>
     <string name="liked_before">قبلا اینو لایک کردی;)</string>
@@ -25,6 +26,8 @@
     <string name="suggestion_view">مشاهده پروفایل طرف</string>
     <string name="suggestion_message">با مشاهده پروفایل طرف نوشتنک های او را ببینید!</string>
     <string name="connect_to_internet">وصلش کن به اینترنت</string>
+    <string name="soon">اینم به زودی اضافه میشه...</string>
+    <string name="soon_first">ایشالا ورژن بعدی</string>
     <!-- time strings -->
     <string name="time_afew_seconds_ago">لحظاتی پیش</string>
     <string name="time_min_ago">دقیقه پیش</string>

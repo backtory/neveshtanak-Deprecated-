@@ -13,7 +13,7 @@
     <application
         android:name="ir.pegahtech.neveshtanak.App"
         android:allowBackup="true"
-        android:icon="@drawable/ic_action_send_sms"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity

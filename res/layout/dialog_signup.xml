@@ -54,14 +54,14 @@
                 android:textColor="@color/neveshtanak_edit_text"
                 android:textSize="16.0sp" />
 
-            <ir.pegahtech.neveshtanak.styledview.StyledTextView
+            <ir.pegahtech.neveshtanak.styledview.StyledEditText
                 android:id="@+id/lbl_dialog_text_gallery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|center_vertical"
                 android:gravity="center|right"
                 android:padding="8.0dip"
-                android:text="@string/username_hint_english"
+                android:hint="@string/user_bio"
                 android:textColor="@color/neveshtanak_edit_text"
                 android:textSize="16.0sp" />
         </LinearLayout>

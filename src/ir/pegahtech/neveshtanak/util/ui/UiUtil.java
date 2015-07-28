@@ -87,58 +87,58 @@ public class UiUtil {
 		else if (input.equals(alphabet[7]))
 			return "H";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[8]))
 			return "KH";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[9]))
 			return "D";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[10]))
 			return "Z";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[11]))
 			return "R";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[12]))
 			return "Z";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[13]))
 			return "ZH";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[14]))
 			return "S";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[15]))
 			return "SH";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[16]))
 			return "F";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[17]))
 			return "GH";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[18]))
 			return "K";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[19]))
 			return "G";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[20]))
 			return "L";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[21]))
 			return "M";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[22]))
 			return "N";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[23]))
 			return "V";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[24]))
 			return "H";
 
-		else if (input.equals(alphabet[0]))
+		else if (input.equals(alphabet[25]))
 			return "Y";
 
 		else
