@@ -3,10 +3,17 @@ package ir.pegahtech.neveshtanak;
 import ir.pegahtech.neveshtanak.styledview.StyledDialog;
 import ir.pegahtech.neveshtanak.util.data.DataHandler;
 import ir.pegahtech.neveshtanak.util.ui.UiUtil;
+import ir.pegahtech.saas.client.Neveshtanak.NeveshtanakConfiguration;
 import ir.pegahtech.saas.client.Neveshtanak.models.jomles.JomleEntity;
 import ir.pegahtech.saas.client.Neveshtanak.services.JomlesService;
+import ir.pegahtech.saas.client.shared.file.SaaSFileService;
 import ir.pegahtech.saas.client.shared.http.ServiceCallback;
 import ir.pegahtech.saas.client.shared.models.InsertUpdateResponse;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
 import android.app.Dialog;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -115,15 +122,15 @@ public class PostPage extends ActionBarActivity {
 				.findViewById(R.id.btn_ok);
 		final EditText name = (EditText) signUpDialog
 				.findViewById(R.id.lbl_dialog_text_camera);
-		ImageView image = (ImageView)signUpDialog.findViewById(R.id.image);
+		ImageView image = (ImageView) signUpDialog.findViewById(R.id.image);
 		image.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				App.toast(getString(R.string.soon), true);
 			}
 		});
-		
+
 		cancelBtn.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -144,5 +151,56 @@ public class PostPage extends ActionBarActivity {
 			}
 		});
 		signUpDialog.show();
+	}
+
+	// Not used already
+	private void setImage(File file, final JomleEntity jomle) {
+		try {
+			SaaSFileService.upload(NeveshtanakConfiguration.instance(),
+					"user-image", fileToByteArray(file),
+					new ServiceCallback<String>() {
+
+						@Override
+						public void success(String result) {
+							jomle.setUserImage(result);
+							JomlesService jomlesService = new JomlesService();
+							jomlesService.update(jomle, new ServiceCallback<InsertUpdateResponse>() {
+								
+								@Override
+								public void success(InsertUpdateResponse result) {
+									System.out.println("Jomle's userImage updated");
+								}
+								
+								@Override
+								public void fail(int resultCode) {
+									System.err.println("Failed to set image with error: " + resultCode);
+								}
+							});
+						}
+
+						@Override
+						public void fail(int resultCode) {
+							System.err.println("Failed to send image with error: " + resultCode);
+						}
+					});
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static byte[] fileToByteArray(File file) throws IOException {
+		RandomAccessFile f = null;
+		try {
+			f = new RandomAccessFile(file, "r");
+			long longlength = f.length();
+			int length = (int) longlength;
+			if (length != longlength)
+				throw new IOException("File size >= 2 GB");
+			byte[] data = new byte[length];
+			f.readFully(data);
+			return data;
+		} finally {
+			f.close();
+		}
 	}
 }

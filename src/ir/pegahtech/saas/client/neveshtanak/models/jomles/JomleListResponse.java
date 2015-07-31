@@ -20,6 +20,8 @@ public class JomleListResponse extends BaseModel {
 
 
 
+
+
 	@SerializedName("totalCount")
 	private Integer totalCount;
 

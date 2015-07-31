@@ -16,6 +16,8 @@ import ir.pegahtech.saas.client.shared.enums.*;
 
 public class JomleEntity extends BaseModel {
 
+
+
 	public static final String COLUMN_Guid = "Guid";
 	public static final String COLUMN_CreationDate = "CreationDate";
 	public static final String COLUMN_IsDeleted = "IsDeleted";
@@ -24,6 +26,7 @@ public class JomleEntity extends BaseModel {
 	public static final String COLUMN_Jomle = "Jomle";
 	public static final String COLUMN_LikeCount = "LikeCount";
 	public static final String COLUMN_UserId = "UserId";
+	public static final String COLUMN_UserImage = "UserImage";
 	public static final String COLUMN_UserName = "UserName";
 
 
@@ -53,6 +56,9 @@ public class JomleEntity extends BaseModel {
 
 	@SerializedName("UserId")
 	private String UserId;
+
+	@SerializedName("UserImage")
+	private String UserImage;
 
 	@SerializedName("UserName")
 	private String UserName;
@@ -118,6 +124,13 @@ public class JomleEntity extends BaseModel {
 	public void setUserId(String UserId) {
 		this.UserId = UserId;
 		notifyChange("UserId", UserId);
+	}
+	public String getUserImage() {
+		return UserImage;
+	}
+	public void setUserImage(String UserImage) {
+		this.UserImage = UserImage;
+		notifyChange("UserImage", UserImage);
 	}
 	public String getUserName() {
 		return UserName;

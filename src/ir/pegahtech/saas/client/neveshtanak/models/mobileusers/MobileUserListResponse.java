@@ -20,6 +20,8 @@ public class MobileUserListResponse extends BaseModel {
 
 
 
+
+
 	@SerializedName("totalCount")
 	private Integer totalCount;
 

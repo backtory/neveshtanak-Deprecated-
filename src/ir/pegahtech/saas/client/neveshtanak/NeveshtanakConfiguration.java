@@ -47,10 +47,10 @@ public class NeveshtanakConfiguration implements SaaSConfiguration {
 		return serviceRootUrl;
 	}
 
-    @Override
-    public String getSecretKey() {
-        return "";
-    }
+    //@Override
+    //public String getSecretKey() {
+    //    return "";
+    //}
     @Override
     public OkHttpClient getHttpClient() {
         return httpClient;

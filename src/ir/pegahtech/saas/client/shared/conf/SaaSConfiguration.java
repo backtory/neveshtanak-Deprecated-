@@ -8,7 +8,7 @@ import java.util.UUID;
  * Created by root on 4/26/15.
  */
 public interface SaaSConfiguration {
-    public String getSecretKey();
+//    public String getSecretKey();
     public UUID getFileTableId();
     public String getApiBaseUrl();
     public SaaSDataProvider getDataProvider();

@@ -16,6 +16,8 @@ import ir.pegahtech.saas.client.shared.enums.*;
 
 public class MobileUserEntity extends BaseModel {
 
+
+
 	public static final String COLUMN_Guid = "Guid";
 	public static final String COLUMN_CreationDate = "CreationDate";
 	public static final String COLUMN_IsDeleted = "IsDeleted";

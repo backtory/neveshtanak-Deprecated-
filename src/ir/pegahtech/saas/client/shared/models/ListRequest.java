@@ -15,6 +15,7 @@ public class ListRequest {
 
     public ListRequest() {
         queryObject = new QueryObject();
+        this.includeUndeleted = true;
     }
 
     public ListRequest(Integer start, Integer pageSize, Boolean includeDeleted,
@@ -24,6 +25,16 @@ public class ListRequest {
         this.includeDeleted = includeDeleted;
         this.includeUndeleted = includeUndeleted;
         this.queryObject = queryObject;
+    }
+
+    /**
+     * exactly same as "and" function, addCondition is just more user-friendly name
+     * @param filter
+     * @return
+     */
+    public ListRequest addCondition(FilterNode filter) {
+        queryObject.and(filter);
+        return this;
     }
 
     public ListRequest and(FilterNode filter) {

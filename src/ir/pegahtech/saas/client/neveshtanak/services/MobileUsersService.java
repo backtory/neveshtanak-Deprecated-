@@ -422,6 +422,7 @@ public class MobileUsersService {
 			NeveshtanakConfiguration.instance().getDataProvider().save("SAAS_user_id",object.getUserId());
 			NeveshtanakConfiguration.instance().getDataProvider().save("SAAS_token_time",DateUtility.getCurrentTime());
 			NeveshtanakConfiguration.instance().getDataProvider().save("SAAS_user_name",request.getUsername());
+			NeveshtanakConfiguration.instance().getDataProvider().save("SAAS_password",request.getPassword());
                 NeveshtanakConfiguration.instance().getDataProvider().runOnMainThread(new Runnable() {
                     @Override
                     public void run() {
@@ -497,6 +498,7 @@ public class MobileUsersService {
 			NeveshtanakConfiguration.instance().getDataProvider().save("SAAS_user_id",object.getUserId());
 			NeveshtanakConfiguration.instance().getDataProvider().save("SAAS_token_time",DateUtility.getCurrentTime());
 			NeveshtanakConfiguration.instance().getDataProvider().save("SAAS_user_name",request.getUsername());
+			NeveshtanakConfiguration.instance().getDataProvider().save("SAAS_password",request.getPassword());
 
        NeveshtanakConfiguration.instance().serviceSucceed(true, "MobileUser", "logIn", url, "468dfb37-32d3-4d2b-a203-608600b52959", "5a0ddb42-c081-4f70-a83a-0e4314da452e");
        return object;
